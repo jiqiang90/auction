@@ -6,8 +6,26 @@ on:
         description: 'indexer version'
         default: 'latest'
         require: true
-
-
+      network-endpoint:
+        description: 'Network endpoint'
+        default: 'wss://polkadot.api.onfinality.io/public-ws'
+        require: false
+      deployment:
+        description: 'Deployment'
+        default: 'QmakYyTWzTxaDU842CczyDWV51Ay9E55k7kbRRXTB3f395'
+        require: false
+      disableHistorical:
+        description: 'Disable historical'
+        default: 'true'
+        require: false
+      batch-size:
+        description: 'batch-size'
+        default: 30
+        require: false
+      workers:
+        description: 'workers'
+        default: 4
+        require: false
 
 jobs:
   # Label of the container job
@@ -22,7 +40,9 @@ jobs:
       # Label used to access the service container
       postgres:
         # Docker Hub image
-        image: postgres:12-alpine
+        build:
+          context: .
+          dockerfile: pg-Dockerfile
         # Provide the password for postgres
         env:
           POSTGRES_PASSWORD: postgres
@@ -50,7 +70,7 @@ jobs:
       - name: INDEXING
         # Runs a script that creates a PostgreSQL table, populates
         # the table with data, and then retrieves the data.
-        run: subql-node -f ipfs://QmakYyTWzTxaDU842CczyDWV51Ay9E55k7kbRRXTB3f395  --network-endpoint='wss://polkadot.api.onfinality.io/public-ws' --batch-size=20 --workers=4 --ipfs='https://unauthipfs.subquery.network/ipfs/api/v0'
+        run: subql-node -f ipfs://${{ github.event.inputs.deployment }}  --network-endpoint=${{ github.event.inputs.network-endpoint }} --batch-size=${{ github.event.inputs.batch-size }} --workers=${{ github.event.inputs.workers }} --ipfs='https://unauthipfs.subquery.network/ipfs/api/v0'
         # Environment variables used by the `client.js` script to create a new PostgreSQL table.
         env:
           # The hostname used to communicate with the PostgreSQL service container

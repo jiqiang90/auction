@@ -45,7 +45,7 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm @subql/node@${{ github.event.inputs.indexerVersion }} -g
+        run: npm i @subql/node@${{ github.event.inputs.indexerVersion }} -g
 
       - name: Connect to PostgreSQL
         # Runs a script that creates a PostgreSQL table, populates

@@ -63,8 +63,8 @@ jobs:
           apt-get install --yes postgresql-client
 
       # queries database with postgres client
-      - name: Setup database for historical
-        run: psql -h postgres -d postgres_db -U postgres_user -c 'CREATE EXTENSION IF NOT EXISTS btree_gist;'
+      - name: Setup historical database
+        run: psql -h postgres -d postgres -U postgres -c 'CREATE EXTENSION IF NOT EXISTS btree_gist;'
         env:
           PGPASSWORD: postgres
 

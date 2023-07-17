@@ -40,9 +40,7 @@ jobs:
       # Label used to access the service container
       postgres:
         # Docker Hub image
-        build:
-          context: .
-          dockerfile: pg-Dockerfile
+        image: postgres:12-alpine
         # Provide the password for postgres
         env:
           POSTGRES_PASSWORD: postgres
@@ -58,6 +56,17 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 100
+
+      - name: Install PostgreSQL client
+        run: |
+          apt-get update
+          apt-get install --yes postgresql-client
+
+      # queries database with postgres client
+      - name: Setup database for historical
+        run: psql -h postgres -d postgres_db -U postgres_user -c 'CREATE EXTENSION IF NOT EXISTS btree_gist;'
+        env:
+          PGPASSWORD: postgres
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v2

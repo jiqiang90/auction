@@ -2,6 +2,10 @@ name: BENCHMARK
 on:
   workflow_dispatch:
     inputs:
+      benchmark-time:
+        description: 'Benchmark time'
+        default: 30
+        require: true
       indexerVersion:
         description: 'indexer version'
         default: 'latest'
@@ -26,13 +30,16 @@ on:
         description: 'workers'
         default: 4
         require: false
+      others:
+        description: 'Other flags'
+        require: false
 
 jobs:
   # Label of the container job
   container-job:
     # Containers must run in Linux based operating systems
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 5
     # Docker Hub image that `container-job` executes in
     container: node:18
 
@@ -77,16 +84,11 @@ jobs:
       - name: Install dependencies
         run: npm i @subql/node@${{ github.event.inputs.indexerVersion }} -g
 
-      - name: INDEXING
-        # Runs a script that creates a PostgreSQL table, populates
-        # the table with data, and then retrieves the data.
-        run: subql-node -f ipfs://${{ github.event.inputs.deployment }}  --network-endpoint=${{ github.event.inputs.network-endpoint }} --batch-size=${{ github.event.inputs.batch-size }} --workers=${{ github.event.inputs.workers }} --ipfs='https://unauthipfs.subquery.network/ipfs/api/v0'
-        # Environment variables used by the `client.js` script to create a new PostgreSQL table.
-        env:
-          # The hostname used to communicate with the PostgreSQL service container
-          DB_USER: postgres
-          DB_PASS: postgres
-          DB_DATABASE: postgres
-          DB_HOST: postgres
-          DB_PORT: 5432
+      - name: Clear history logs
+        run: rm -rf indexing.log benchmark.log
 
+      - name: Benchmarking and save logs
+        run: |
+          chmod +x index.sh
+          ./index.sh ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ github.event.inputs.network-endpoint }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}
+          tail -f indexing.log

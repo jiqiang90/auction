@@ -2,13 +2,13 @@
 
 # Get input parameters passed from the GitHub Action workflow
 # Testing time
-input_duration=$0
-input_deployment=$1
-input_endpoint=$2
-input_batch_size=$3
-input_workers=$4
-input_disableHistorical=$5
-input_others=$6
+input_duration=$1
+input_deployment=$2
+input_endpoint=$3
+input_batch_size=$4
+input_workers=$5
+input_disableHistorical=$6
+input_others=$7
 
 timeout_duration=$((input_duration * 60))
 

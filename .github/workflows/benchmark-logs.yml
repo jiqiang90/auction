@@ -92,3 +92,10 @@ jobs:
           chmod +x .github/workflows/index.sh
           .github/workflows/index.sh ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ github.event.inputs.network-endpoint }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}
           tail -f indexing.log
+        env:
+          # The hostname used to communicate with the PostgreSQL service container
+          DB_USER: postgres
+          DB_PASS: postgres
+          DB_DATABASE: postgres
+          DB_HOST: postgres
+          DB_PORT: 5432

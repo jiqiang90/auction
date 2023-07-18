@@ -17,7 +17,7 @@ on:
       network-endpoint:
         description: 'Network endpoint'
         default: 'wss://polkadot.api.onfinality.io/public-ws'
-        require: false
+        require: true
       disableHistorical:
         description: 'Disable historical'
         default: 'true'
@@ -104,3 +104,19 @@ jobs:
           DB_DATABASE: postgres
           DB_HOST: postgres
           DB_PORT: 5432
+
+      - name: Get current time
+        uses: josStorer/get-current-time@v2
+        id: current-time
+        with:
+          format: YYYYMMDD-HH
+          utcOffset: "+08:00"
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: 'Benchmark_Report_'+ $TIME
+        env:
+          TIME: "${{ steps.current-time.outputs.time }}"
+
+

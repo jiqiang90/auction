@@ -90,7 +90,7 @@ jobs:
       - name: Benchmarking and save logs
         uses: nick-fields/retry@v2
         with:
-          timeout_seconds: 15
+          timeout_minutes: 120 #protect timeout ci
           max_attempts: 5
           retry_on: error
           command: |

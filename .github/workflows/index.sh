@@ -10,16 +10,28 @@ input_workers=$5
 input_disableHistorical=$6
 input_others=$7
 
+
+start_app() {
+  subql-node -f ipfs://$input_deployment --network-endpoint=$input_endpoint --batch-size=$input_batch_size --workers=$input_workers --disable-historical=$input_disableHistorical $input_others --ipfs='https://unauthipfs.subquery.network/ipfs/api/v0' --output-fmt=json > indexing.log 2>&1 &
+}
+
+# Set the timeout in seconds
 timeout_duration=$((input_duration * 60))
 
-# Start Node.js app with input parameters and redirect logs to a file
-timeout $timeout_duration subql-node -f ipfs://$input_deployment --network-endpoint=$input_endpoint --batch-size=$input_batch_size --workers=$input_workers --disable-historical=$input_disableHistorical $input_others --ipfs='https://unauthipfs.subquery.network/ipfs/api/v0' --output-fmt=json > indexing.log 2>&1 &
+# Start the app in the background
+start_app &
 
-# Wait for the app to start (adjust the sleep duration as needed)
-sleep 30
+# Get the process ID (PID) of the app
+app_pid=$!
 
-# Filter logs containing "benchmark" and save to benchmark.log
-grep "benchmark" indexing.log > benchmark.log
+# Wait for the app to finish or timeout
+if ! timeout $timeout_duration wait $app_pid; then
+  # If the timeout occurred, send a SIGTERM to the process to exit gracefully
+  echo "Finishing benchmarking..."
+  kill $app_pid
+  # Optionally, wait for the app to exit after sending the signal
+  wait $app_pid
+fi
 
-# Optionally, you can also print the filtered logs to the terminal
-cat benchmark.log
+# Exit the bash script
+exit 0

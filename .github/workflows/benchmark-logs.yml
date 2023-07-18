@@ -87,7 +87,7 @@ jobs:
       - name: Clear history logs
         run: rm -rf indexing.log benchmark.log
 
-      - name: Benchmarking and save logs
+      - name: Benchmarking #could retry
         run: |
           chmod +x .github/workflows/index.sh
           .github/workflows/index.sh ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ github.event.inputs.network-endpoint }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}
@@ -99,6 +99,12 @@ jobs:
           DB_DATABASE: postgres
           DB_HOST: postgres
           DB_PORT: 5432
+
+      - name: Filter logs
+        run: |
+          grep "benchmark" indexing.log > benchmark.log
+          echo "Benchmarking results: "
+          cat benchmark.log
 
       - name: Get current time
         uses: josStorer/get-current-time@v2

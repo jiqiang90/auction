@@ -88,15 +88,10 @@ jobs:
         run: rm -rf indexing.log benchmark.log
 
       - name: Benchmarking and save logs
-        uses: nick-fields/retry@v2
-        with:
-          timeout_minutes: 120 #protect timeout ci
-          max_attempts: 5
-          retry_on: error
-          command: |
-            chmod +x .github/workflows/index.sh
-            .github/workflows/index.sh ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ github.event.inputs.network-endpoint }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}
-            tail -f indexing.log
+        run: |
+          chmod +x .github/workflows/index.sh
+          .github/workflows/index.sh ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ github.event.inputs.network-endpoint }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}
+          tail -f indexing.log
         env:
           # The hostname used to communicate with the PostgreSQL service container
           DB_USER: postgres

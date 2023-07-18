@@ -13,7 +13,7 @@ input_others=$6
 timeout_duration=$((input_duration * 60))
 
 # Start Node.js app with input parameters and redirect logs to a file
-timeout timeout_duration subql-node -f ipfs://$input_deployment --network-endpoint=$input_endpoint --batch-size=$input_batch_size --workers=$input_workers --disable-historical=$input_disableHistorical $input_others --ipfs='https://unauthipfs.subquery.network/ipfs/api/v0' --output-fmt=json > indexing.log 2>&1 &
+timeout $timeout_duration subql-node -f ipfs://$input_deployment --network-endpoint=$input_endpoint --batch-size=$input_batch_size --workers=$input_workers --disable-historical=$input_disableHistorical $input_others --ipfs='https://unauthipfs.subquery.network/ipfs/api/v0' --output-fmt=json > indexing.log 2>&1 &
 
 # Wait for the app to start (adjust the sleep duration as needed)
 sleep 30

@@ -89,7 +89,7 @@ jobs:
 
       - name: Benchmarking #could retry
         continue-on-error: true
-        timeout-minutes: 2
+        timeout-minutes: 1
         run: |
           node test.js > indexing.log 2>&1 &
           tail -f indexing.log
@@ -103,7 +103,9 @@ jobs:
 
       - name: Filter logs
         continue-on-error: true
-        run:  grep "benchmark" indexing.log > benchmark.log
+        run: |
+          chmod +x ./indexing.log
+          grep "benchmark" indexing.log > benchmark.log
 
       - name: Get current time
         continue-on-error: true

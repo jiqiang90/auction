@@ -114,6 +114,11 @@ jobs:
           format: YYYYMMDD-HH
           utcOffset: "+08:00"
 
+      - name: config git
+        run: git config --global --add safe.directory /__w/auction/auction
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Commit changes
         uses: EndBug/add-and-commit@v5
         with:

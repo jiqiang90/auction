@@ -82,6 +82,8 @@ jobs:
           node-version: 18
 
       - name: Start Node.js App with Timeout
+        continue-on-error: true
+        id: app
         run: |
           # Start the Node.js app in the background and save its PID
           node test.js > indexing.log &
@@ -90,11 +92,17 @@ jobs:
           # Wait for 2 minutes (adjust the timeout as needed)
           sleep 2m
 
-          # Send a graceful termination signal to the Node.js app
-          kill $APP_PID
+          # Check if the app is still running
+          if ps -p $APP_PID > /dev/null; then
+            # Send a graceful termination signal to the Node.js app
+            kill $APP_PID
 
-          # Wait for the app to exit (in case it doesn't terminate immediately)
-          wait $APP_PID
+            # Wait for the app to exit (in case it doesn't terminate immediately)
+            wait $APP_PID
+          fi
+
+          # Always exit with code 0, regardless of whether the app timed out or not
+          exit 0
 
       - name: Filter Logs for 'benchmark' keyword
         run: |

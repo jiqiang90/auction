@@ -10,28 +10,25 @@ input_workers=$5
 input_disableHistorical=$6
 input_others=$7
 
+# Start the Node.js application in the background
+subql-node -f ipfs://$input_deployment --network-endpoint=$input_endpoint --batch-size=$input_batch_size --workers=$input_workers --disable-historical=$input_disableHistorical $input_others --ipfs='https://unauthipfs.subquery.network/ipfs/api/v0' --output-fmt=json > indexing.log 2>&1 &
 
-start_app() {
-  subql-node -f ipfs://$input_deployment --network-endpoint=$input_endpoint --batch-size=$input_batch_size --workers=$input_workers --disable-historical=$input_disableHistorical $input_others --ipfs='https://unauthipfs.subquery.network/ipfs/api/v0' --output-fmt=json > indexing.log 2>&1 &
-}
+# Get the process ID of the Node.js application
+pid=$!
 
-# Set the timeout in seconds
-timeout_duration=$((input_duration * 60))
+# Timeout value in seconds
+timeout=$((input_duration * 60))
 
-# Start the app in the background
-start_app &
+# Wait for the Node.js application to finish or timeout
+timeout $timeout bash -c "while kill -0 $pid >/dev/null 2>&1; do sleep 1; done"
 
-# Get the process ID (PID) of the app
-app_pid=$!
-
-# Wait for the app to finish or timeout
-if ! timeout $timeout_duration wait $app_pid; then
-  # If the timeout occurred, send a SIGTERM to the process to exit gracefully
-  echo "Finishing benchmarking..."
-  kill $app_pid
-  # Optionally, wait for the app to exit after sending the signal
-  wait $app_pid
+# Check if the process is still running
+if kill -0 $pid >/dev/null 2>&1; then
+  # Process is still running, so terminate it
+  kill -9 $pid
+  exit 0
 fi
 
-# Exit the bash script
-exit 0
+# The process finished before the timeout, so exit with the actual exit code
+wait $pid
+exit $?

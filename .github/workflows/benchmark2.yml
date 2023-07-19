@@ -100,7 +100,11 @@ jobs:
 
       - name: Filter Logs for 'benchmark' keyword
         run: |
-          grep -i "benchmark" indexing.log > benchmark.log
+          if grep -qi "benchmark" indexing.log; then
+            grep -i "benchmark" indexing.log > benchmark.log
+          else
+            echo "No lines containing 'benchmark' found in indexing.log"
+          fi
 
       - name: Get current time
         uses: josStorer/get-current-time@v2

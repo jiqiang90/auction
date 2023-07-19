@@ -91,8 +91,9 @@ jobs:
         continue-on-error: true
         timeout-minutes: 2
         run: |
-          chmod +x .github/workflows/index2.sh
-          .github/workflows/index2.sh ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ github.event.inputs.network-endpoint }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}
+          node test.js > indexing.log 2>&1 &
+#          chmod +x .github/workflows/index2.sh
+#          .github/workflows/index2.sh ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ github.event.inputs.network-endpoint }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}
           tail -f indexing.log
         env:
           # The hostname used to communicate with the PostgreSQL service container
@@ -106,8 +107,6 @@ jobs:
         continue-on-error: true
         run: |
           grep "benchmark" indexing.log > benchmark.log
-          echo "Benchmarking results: "
-          cat benchmark.log
 
       - name: Get current time
         continue-on-error: true

@@ -16,7 +16,7 @@ node test.js > indexing.log 2>&1 &
 pid=$!
 
 # Timeout value in seconds
-timeout=3
+timeout=10
 
 # Wait for the Node.js application to finish or timeout
 timeout $timeout bash -c "while kill -0 $pid >/dev/null 2>&1; do sleep 1; done"

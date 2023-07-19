@@ -82,6 +82,9 @@ jobs:
         with:
           node-version: 18
 
+      - name: Install dependencies
+        run: npm i @subql/node@${{ github.event.inputs.indexerVersion }} -g
+
       - name: Benchmarking
         id: app
         continue-on-error: true

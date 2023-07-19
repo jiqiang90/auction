@@ -83,6 +83,7 @@ jobs:
 
       - name: Start Node.js App with Timeout
         id: app
+        continue-on-error: true
         run: |
           # Start the Node.js app in the background and save its PID
           node test.js > indexing.log &
@@ -95,12 +96,10 @@ jobs:
           pkill -P $APP_PID || true
           wait $APP_PID || true
 
-      - name: Filter Logs for 'benchmark' keyword
-        run: |
-          grep -i "benchmark" indexing.log > benchmark.log
 
-      - name: Consider Workflow Success
-        run: exit 0
+      - name: Show indexing log
+        run: cat indexing.log
+
 
 
 

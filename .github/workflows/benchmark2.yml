@@ -88,6 +88,7 @@ jobs:
         run: rm -rf indexing.log benchmark.log
 
       - name: Benchmarking #could retry
+        timeout-minutes: 2
         run: |
           chmod +x .github/workflows/index2.sh
           .github/workflows/index2.sh ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ github.event.inputs.network-endpoint }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}

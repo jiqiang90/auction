@@ -98,7 +98,24 @@ jobs:
       - name: Show indexing log
         run: cat indexing.log
 
+      - name: Filter Logs for 'benchmark' keyword
+        run: |
+          grep -i "benchmark" indexing.log > benchmark.log
 
+      - name: Get current time
+        uses: josStorer/get-current-time@v2
+        id: current-time
+        with:
+          format: YYYYMMDD-HH
+          utcOffset: "+08:00"
 
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: |
+            "Benchmark_Report_"
+            $TIME
+        env:
+          TIME: "${{ steps.current-time.outputs.time }}"
 
 

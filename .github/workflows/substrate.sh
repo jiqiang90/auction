@@ -14,6 +14,9 @@ input_others=$7
 subql-node -f ipfs://$input_deployment --network-endpoint=$input_endpoint --batch-size=$input_batch_size --workers=$input_workers --disable-historical=$input_disableHistorical $input_others --ipfs='https://unauthipfs.subquery.network/ipfs/api/v0' --output-fmt=json > substrate/indexing.log 2>&1 &
 APP_PID=$!
 
+# Show indexing log
+tail -f substrate/indexing.log
+
 timeout=$((input_duration * 60))
 
 # Wait for timeout

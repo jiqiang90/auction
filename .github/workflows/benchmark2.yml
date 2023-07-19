@@ -39,7 +39,7 @@ jobs:
   container-job:
     # Containers must run in Linux based operating systems
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    continue-on-error: true
     # Docker Hub image that `container-job` executes in
     container: node:18
 
@@ -88,7 +88,6 @@ jobs:
         run: rm -rf indexing.log benchmark.log
 
       - name: Benchmarking #could retry
-        continue-on-error: true
         run: |
           chmod +x .github/workflows/index2.sh
           .github/workflows/index2.sh ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ github.event.inputs.network-endpoint }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}

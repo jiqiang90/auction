@@ -61,9 +61,10 @@ jobs:
 
     steps:
       #Check out
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 100
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install PostgreSQL client
         run: |
@@ -118,5 +119,5 @@ jobs:
         with:
           message: Benchmark_Report_${{steps.current-time.outputs.formattedTime}}_${{ github.event.inputs.indexerVersion }}
         env:
-          GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

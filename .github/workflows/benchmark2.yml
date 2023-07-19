@@ -92,8 +92,8 @@ jobs:
           sleep 2m
 
           # Terminate the Node.js app
-          pkill -P $APP_PID
-          wait $APP_PID
+          pkill -P $APP_PID || true
+          wait $APP_PID || true
 
       - name: Filter Logs for 'benchmark' keyword
         run: |
@@ -101,3 +101,7 @@ jobs:
 
       - name: Consider Workflow Success
         run: exit 0
+
+
+
+

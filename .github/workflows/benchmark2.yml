@@ -88,6 +88,7 @@ jobs:
         run: rm -rf indexing.log benchmark.log
 
       - name: Benchmarking #could retry
+        continue-on-error: true
         timeout-minutes: 2
         run: |
           chmod +x .github/workflows/index2.sh
@@ -102,12 +103,14 @@ jobs:
           DB_PORT: 5432
 
       - name: Filter logs
+        continue-on-error: true
         run: |
           grep "benchmark" indexing.log > benchmark.log
           echo "Benchmarking results: "
           cat benchmark.log
 
       - name: Get current time
+        continue-on-error: true
         uses: josStorer/get-current-time@v2
         id: current-time
         with:
@@ -115,6 +118,7 @@ jobs:
           utcOffset: "+08:00"
 
       - name: Commit changes
+        continue-on-error: true
         uses: EndBug/add-and-commit@v9
         with:
           message: |

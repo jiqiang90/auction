@@ -94,8 +94,6 @@ jobs:
 
           # Terminate the Node.js app
           pkill -P $APP_PID || true
-          wait $APP_PID || true
-
 
       - name: Show indexing log
         run: cat indexing.log

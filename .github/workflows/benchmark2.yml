@@ -114,12 +114,8 @@ jobs:
           utcOffset: "+08:00"
 
       - name: Commit changes
-        uses: EndBug/add-and-commit@v9
+        uses: EndBug/add-and-commit@v5
         with:
-          message: |
-            "Benchmark_Report_"
-            $TIME
-        env:
-          TIME: "${{ steps.current-time.outputs.time }}"
+          message: Benchmark_Report_${{steps.current-time.outputs.formattedTime}}
 
 

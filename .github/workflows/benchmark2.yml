@@ -82,27 +82,18 @@ jobs:
         with:
           node-version: 18
 
-      - name: Start Node.js App with Timeout
+      - name: Benchmarking
         id: app
         continue-on-error: true
         run: |
-          # Start the Node.js app in the background and save its PID
-          node test.js > indexing.log &
-          APP_PID=$!
-
-          # Wait for 2 minutes (adjust the timeout as needed)
-          sleep 2m
-
-          # Terminate the Node.js app
-          pkill -P $APP_PID || true
-
-      - name: Show indexing log
-        run: cat indexing.log
+          chmod +x .github/workflows/index2.sh
+          .github/workflows/index2.sh ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ github.event.inputs.network-endpoint }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}
+          tail -f results/indexing.log
 
       - name: Filter Logs for 'benchmark' keyword
         run: |
-          if grep -qi "benchmark" indexing.log; then
-            grep -i "benchmark" indexing.log > benchmark.log
+          if grep -qi "benchmark" results/indexing.log; then
+            grep -i "benchmark" results/indexing.log > results/benchmark.log
           else
             echo "No lines containing 'benchmark' found in indexing.log"
           fi
@@ -111,10 +102,10 @@ jobs:
         uses: josStorer/get-current-time@v2
         id: current-time
         with:
-          format: YYYYMMDD-HH
-          utcOffset: "+08:00"
+          format: YYYYMMDD-HHMM
+          utcOffset: "+12:00"
 
-      - name: config git
+      - name: Config git
         run: git config --global --add safe.directory /__w/auction/auction
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

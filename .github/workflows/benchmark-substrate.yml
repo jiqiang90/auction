@@ -1,4 +1,4 @@
-name: BENCHMARK2
+name: BENCHMARK-SUBSTRATE
 on:
   workflow_dispatch:
     inputs:
@@ -89,16 +89,16 @@ jobs:
         id: app
         continue-on-error: true
         run: |
-          chmod +x .github/workflows/index2.sh
-          .github/workflows/index2.sh ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ github.event.inputs.network-endpoint }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}
-          tail -f results/indexing.log
+          chmod +x .github/workflows/substrate.sh
+          .github/workflows/substrate.sh ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ github.event.inputs.network-endpoint }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}
+          tail -f substrate/indexing.log
 
       - name: Filter Logs for 'benchmark' keyword
         run: |
-          if grep -qi "benchmark" results/indexing.log; then
-            grep -i "benchmark" results/indexing.log > results/benchmark.log
+          if grep -qi "benchmark" substrate/indexing.log; then
+            grep -i "benchmark" substrate/indexing.log > substrate/benchmark.log
           else
-            echo "No lines containing 'benchmark' found in indexing.log"
+            echo "No lines containing 'benchmark' found in substrate/indexing.log"
           fi
 
       - name: Get current time

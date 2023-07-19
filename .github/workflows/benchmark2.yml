@@ -85,7 +85,7 @@ jobs:
         id: app
         run: |
           # Start the Node.js app in the background and save its PID
-          node your_node_app.js > indexing.log &
+          node test.js > indexing.log &
           APP_PID=$!
 
           # Wait for 2 minutes (adjust the timeout as needed)

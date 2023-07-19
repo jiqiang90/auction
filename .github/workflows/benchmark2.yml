@@ -116,6 +116,7 @@ jobs:
       - name: Commit changes
         uses: EndBug/add-and-commit@v5
         with:
-          message: Benchmark_Report_${{steps.current-time.outputs.formattedTime}}
-
+          message: Benchmark_Report_${{steps.current-time.outputs.formattedTime}}_${{ github.event.inputs.indexerVersion }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
 

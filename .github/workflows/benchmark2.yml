@@ -90,8 +90,8 @@ jobs:
       - name: Benchmarking #could retry
         continue-on-error: true
         run: |
-          chmod +x .github/workflows/index.sh
-          .github/workflows/index.sh ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ github.event.inputs.network-endpoint }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}
+          chmod +x .github/workflows/index2.sh
+          .github/workflows/index2.sh ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ github.event.inputs.network-endpoint }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}
           tail -f indexing.log
         env:
           # The hostname used to communicate with the PostgreSQL service container

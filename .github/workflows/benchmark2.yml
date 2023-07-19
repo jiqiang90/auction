@@ -81,47 +81,21 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies
-        run: npm i @subql/node@${{ github.event.inputs.indexerVersion }} -g
-
-      - name: Clear history logs
-        run: rm -rf indexing.log benchmark.log
-
-      - name: Benchmarking #could retry
-        continue-on-error: true
-        timeout-minutes: 1
+      - name: Start Node.js App with Timeout
         run: |
-          node test.js > indexing.log 2>&1 &
-          tail -f indexing.log
-        env:
-          # The hostname used to communicate with the PostgreSQL service container
-          DB_USER: postgres
-          DB_PASS: postgres
-          DB_DATABASE: postgres
-          DB_HOST: postgres
-          DB_PORT: 5432
+          # Start the Node.js app in the background and save its PID
+          node test.js > indexing.log &
+          APP_PID=$!
 
-      - name: Filter logs
-        continue-on-error: true
+          # Wait for 2 minutes (adjust the timeout as needed)
+          sleep 2m
+
+          # Send a graceful termination signal to the Node.js app
+          kill $APP_PID
+
+          # Wait for the app to exit (in case it doesn't terminate immediately)
+          wait $APP_PID
+
+      - name: Filter Logs for 'benchmark' keyword
         run: |
-          chmod +x ./indexing.log
-          grep "benchmark" indexing.log > benchmark.log
-
-      - name: Get current time
-        continue-on-error: true
-        uses: josStorer/get-current-time@v2
-        id: current-time
-        with:
-          format: YYYYMMDD-HH
-          utcOffset: "+08:00"
-
-      - name: Commit changes
-        continue-on-error: true
-        uses: EndBug/add-and-commit@v9
-        with:
-          message: |
-            "Benchmark_Report_"
-            $TIME
-        env:
-          TIME: "${{ steps.current-time.outputs.time }}"
-
+          grep -i "benchmark" indexing.log > benchmark.log

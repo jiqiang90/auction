@@ -17,7 +17,7 @@ APP_PID=$!
 # Show indexing log
 tail -f substrate/indexing.log
 
-timeout=$((input_duration * 60))
+timeout=input_duration
 
 # Wait for timeout
 sleep $timeout

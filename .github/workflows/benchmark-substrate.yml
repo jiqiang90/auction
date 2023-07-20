@@ -125,8 +125,8 @@ jobs:
           PGPASSWORD: postgres
         run: |
           # Query the database and store the result in variables
-          start_height=$(psql -h postgres -d postgres -U postgres -c "SELECT value FROM app._metadata WHERE key = 'startHeight';")
-          last_processed_height=$(psql -h postgres -d postgres -U postgres -c "SELECT value FROM app._metadata WHERE key = 'lastProcessedHeight';")
+          start_height=$(psql -h postgres -d postgres -U postgres -c "SELECT value::integer FROM app._metadata WHERE key = 'startHeight';" | awk 'NR == 3 {print $1}')
+          last_processed_height=$(psql -h postgres -d postgres -U postgres -c "SELECT value::integer FROM app._metadata WHERE key = 'lastProcessedHeight';" | awk 'NR == 3 {print $1}')
           echo "Start Height: $start_height"
           echo "Last Processed Height: $last_processed_height"
           # Set outputs for subsequent steps

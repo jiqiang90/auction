@@ -17,10 +17,8 @@ APP_PID=$!
 # Show indexing log
 tail -f substrate/indexing.log
 
-timeout=input_duration
-
 # Wait for timeout
-sleep $timeout
+sleep $input_duration
 
 # Terminate the Node.js app
 pkill -P $APP_PID || true

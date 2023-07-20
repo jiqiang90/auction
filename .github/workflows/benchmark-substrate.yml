@@ -85,8 +85,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          chmod +x .github/workflows/scripts/dependency.sh
-          .github/workflows/scripts/dependency.sh ${{github.event.inputs.indexerVersion}} 
+          chmod +x .github/workflows/scripts/benchmark/dependency.sh
+          .github/workflows/scripts/benchmark/dependency.sh ${{github.event.inputs.indexerVersion}} 
 
       - name: Ensure reports path exists
         run: |
@@ -102,8 +102,8 @@ jobs:
       - name: Benchmarking
         id: app
         run: |
-          chmod +x .github/workflows/scripts/benchmarking.sh
-          .github/workflows/scripts/benchmarking.sh ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ github.event.inputs.network-endpoint }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}
+          chmod +x .github/workflows/scripts/benchmark/benchmarking.sh
+          .github/workflows/scripts/benchmark/benchmarking.sh ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ github.event.inputs.network-endpoint }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}
         env:
           # The hostname used to communicate with the PostgreSQL service container
           DB_USER: postgres
@@ -117,8 +117,8 @@ jobs:
         env:
           PGPASSWORD: postgres
         run: |
-          chmod +x .github/workflows/scripts/queryMeta.sh
-          .github/workflows/scripts/queryMeta.sh 
+          chmod +x .github/workflows/scripts/benchmark/queryMeta.sh
+          .github/workflows/scripts/benchmark/queryMeta.sh 
 
       - name: Pre-save running specs
         run: |

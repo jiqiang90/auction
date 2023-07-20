@@ -19,8 +19,5 @@ echo "Benchmarking timeout: $input_duration "
 # Wait for timeout
 sleep $input_duration
 
-## Show indexing log
-#tail -f substrate/indexing.log
-
 # Terminate the Node.js app
 pkill -P $APP_PID || true

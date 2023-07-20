@@ -110,13 +110,37 @@ jobs:
           DB_HOST: postgres
           DB_PORT: 5432
 
+
+      - name: Extract actual sdk version
+        id: extract_version
+        run: |
+          version_line=$(grep -oE 'Current @subql/node version is.*' output/benchmark/indexing.log)
+          # Use cut to extract the version from the line
+          version=$(echo "$version_line" | cut -d' ' -f7)
+          echo "::set-output name=version::$version"    
+          
+          
+
+      - name: Pre-save running specs
+        run: |
+          echo "benchmark-time=${{github.event.inputs.benchmark-time}}" > output/benchmark/benchmark.log
+          echo "indexerVersion=${{steps.extract_version.outputs.version}}" >> output/benchmark/benchmark.log
+          echo "deployment=${{github.event.inputs.deployment}}" >> output/benchmark/benchmark.log
+          echo "network-endpoint=${{github.event.inputs.network-endpoint}}" >> output/benchmark/benchmark.log
+          echo "disableHistorical=${{github.event.inputs.disableHistorical}}" >> output/benchmark/benchmark.log
+          echo "batch-size=${{github.event.inputs.batch-size}}" >> output/benchmark/benchmark.log
+          echo "workers=${{github.event.inputs.workers}}" >> output/benchmark/benchmark.log
+          if [ -n "${{github.event.inputs.workers}}" ]; then
+            echo "others=${{github.event.inputs.workers}}" >> output/benchmark/benchmark.log
+          fi     
+
       - name: Prepare benchmark log
         run: |
           if grep -qi "benchmark" output/benchmark/indexing.log; then
-            grep -i "benchmark" output/benchmark/indexing.log > output/benchmark/benchmark.log
+            grep -i "benchmark" output/benchmark/indexing.log >> output/benchmark/benchmark.log
             cat output/benchmark/benchmark.log
           else
-            echo "No lines containing 'benchmark' found in output/benchmark/indexing.log"
+            echo "No lines containing 'benchmark' found in output/benchmark/indexing.log" >> output/benchmark/benchmark.log
           fi
 
       - name: Get current time
@@ -129,5 +153,5 @@ jobs:
       - name: Upload reports
         uses: actions/upload-artifact@v3
         with:
-          name: benchmark-report-${{steps.current-time.outputs.formattedTime}}-${{ github.event.inputs.indexerVersion }}
+          name: benchmark-report-${{steps.current-time.outputs.formattedTime}}-v${{steps.extract_version.outputs.version}}
           path: output/benchmark/

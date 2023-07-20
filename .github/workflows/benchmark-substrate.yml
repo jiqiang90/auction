@@ -3,8 +3,8 @@ on:
   workflow_dispatch:
     inputs:
       benchmark-time:
-        description: 'Benchmark time'
-        default: 30
+        description: 'Benchmark time(h/m/s)'
+        default: 30m
         require: true
       indexerVersion:
         description: 'indexer version'

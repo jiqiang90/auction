@@ -15,10 +15,10 @@ subql-node -f ipfs://$input_deployment --network-endpoint=$input_endpoint --batc
 APP_PID=$!
 
 # Show indexing log
-#tail -f substrate/indexing.log
+tail -f substrate/indexing.log
 
 # Wait for timeout
-sleep 2m
+sleep $input_duration
 
 # Terminate the Node.js app
 pkill -P $APP_PID || true

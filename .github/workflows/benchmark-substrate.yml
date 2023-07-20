@@ -98,7 +98,6 @@ jobs:
 
       - name: Benchmarking
         id: app
-        continue-on-error: true
         run: |
           chmod +x .github/workflows/substrate.sh
           .github/workflows/substrate.sh ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ github.event.inputs.network-endpoint }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}
@@ -118,8 +117,22 @@ jobs:
           # Use cut to extract the version from the line
           version=$(echo "$version_line" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')
           echo "::set-output name=version::$version"    
-          
-          
+      
+
+      - name: Query metadata get processed height
+        id: query_meta
+        env:
+          PGPASSWORD: postgres
+        run: |
+          # Query the database and store the result in variables
+          start_height=$(psql -h postgres -d postgres -U postgres -c "SELECT value FROM benchmark-app._metadata WHERE key = 'startHeight';")
+          last_processed_height=$(psql -h postgres -d postgres -U postgres -c "SELECT value FROM benchmark-app._metadata WHERE key = 'lastProcessedHeight';")
+          echo "Start Height: $start_height"
+          echo "Last Processed Height: $last_processed_height"
+          # Set outputs for subsequent steps
+          echo "::set-output name=start_height::$start_height"
+          echo "::set-output name=last_processed_height::$last_processed_height"
+
 
       - name: Pre-save running specs
         run: |
@@ -132,7 +145,10 @@ jobs:
           echo "workers=${{github.event.inputs.workers}}" >> output/benchmark/benchmark.log
           if [ -n "${{github.event.inputs.others}}" ]; then
             echo "others=${{github.event.inputs.others}}" >> output/benchmark/benchmark.log
-          fi     
+          fi 
+          echo "Start Height: ${{steps.query_meta.outputs.start_height}}" >> output/benchmark/benchmark.log
+          echo "Last Processed Height: ${{steps.query_meta.outputs.last_processed_height}}" >> output/benchmark/benchmark.log
+          echo "------------------------------------" >> indexing.log
 
       - name: Prepare benchmark log
         run: |
@@ -155,3 +171,28 @@ jobs:
         with:
           name: benchmark-report-${{steps.current-time.outputs.formattedTime}}-v${{steps.extract_version.outputs.version}}
           path: output/benchmark/
+
+
+      - name: Post to a Slack channel
+        id: slack
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          # Slack channel id, channel name, or user id to post message.
+          # See also: https://api.slack.com/methods/chat.postMessage#channels
+          channel-id: 'C02156BV42V'
+          # For posting a rich message using Block Kit
+          payload: |
+            {
+              "text": "Benchmark result ${{steps.current-time.outputs.formattedTime}}-v${{steps.extract_version.outputs.version}}",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Results: ${{ job.status }}\n version:${{steps.extract_version.outputs.version}}\n workers:${{github.event.inputs.workers}}\n batch-size:${{github.event.inputs.batch-size}}\n  block ${{steps.query_meta.outputs.start_height}} to ${{steps.query_meta.outputs.last_processed_height}}, total ${{steps.query_meta.outputs.last_processed_height-steps.query_meta.outputs.start_height}} in ${{github.event.inputs.benchmark-time}}"
+                  }
+                }
+              ]
+            }
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}

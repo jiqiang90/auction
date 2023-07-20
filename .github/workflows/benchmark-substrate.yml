@@ -85,6 +85,17 @@ jobs:
       - name: Install dependencies
         run: npm i @subql/node@${{ github.event.inputs.indexerVersion }} -g
 
+
+      - name: Ensure reports path exists
+        run: |
+          output_dir="output/benchmark/"
+          if [ ! -d "$output_dir" ]; then
+            mkdir -p "$output_dir"
+            echo "Created directory: $output_dir"
+          else
+            echo "Benchmark report directory already exists: $output_dir"
+          fi
+
       - name: Benchmarking
         id: app
         continue-on-error: true
@@ -99,12 +110,13 @@ jobs:
           DB_HOST: postgres
           DB_PORT: 5432
 
-      - name: Filter Logs for 'benchmark' keyword
+      - name: Prepare benchmark log
         run: |
-          if grep -qi "benchmark" substrate/indexing.log; then
-            grep -i "benchmark" substrate/indexing.log > substrate/benchmark.log
+          if grep -qi "benchmark" output/benchmark/indexing.log; then
+            grep -i "benchmark" output/benchmark/indexing.log > output/benchmark/benchmark.log
+            cat output/benchmark/benchmark.log
           else
-            echo "No lines containing 'benchmark' found in substrate/indexing.log"
+            echo "No lines containing 'benchmark' found in output/benchmark/indexing.log"
           fi
 
       - name: Get current time
@@ -114,15 +126,8 @@ jobs:
           format: YYYYMMDD-HHMM
           utcOffset: "+12:00"
 
-      - name: Config git
-        run: git config --global --add safe.directory /__w/auction/auction
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Commit changes
-        uses: EndBug/add-and-commit@v5
+      - name: Upload reports
+        uses: actions/upload-artifact@v3
         with:
-          message: Benchmark_Report_${{steps.current-time.outputs.formattedTime}}_${{ github.event.inputs.indexerVersion }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+          name: benchmark-report-${{steps.current-time.outputs.formattedTime}}-${{ github.event.inputs.indexerVersion }}
+          path: output/benchmark/

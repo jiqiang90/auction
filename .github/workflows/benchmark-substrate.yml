@@ -189,7 +189,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "Results: ${{ job.status }}\n version:${{steps.extract_version.outputs.version}}\n workers:${{github.event.inputs.workers}}\n batch-size:${{github.event.inputs.batch-size}}\n  block ${{steps.query_meta.outputs.start_height}} to ${{steps.query_meta.outputs.last_processed_height}}, total ${{steps.query_meta.outputs.last_processed_height-steps.query_meta.outputs.start_height}} in ${{github.event.inputs.benchmark-time}}"
+                    "text": "Results: ${{ job.status }}\n Indexer:@subql/node@${{steps.extract_version.outputs.version}}\n workers:${{github.event.inputs.workers}}\n batch-size:${{github.event.inputs.batch-size}}\n block ${{steps.query_meta.outputs.start_height}} to ${{steps.query_meta.outputs.last_processed_height}}, total $((steps.query_meta.outputs.last_processed_height-steps.query_meta.outputs.start_height)) in ${{github.event.inputs.benchmark-time}}\n More details: ${{ github.repository }}/actions/runs/${{ github.run_id }}"
                   }
                 }
               ]

@@ -148,7 +148,7 @@ jobs:
           fi 
           echo "Start Height: ${{steps.query_meta.outputs.start_height}}" >> output/benchmark/benchmark.log
           echo "Last Processed Height: ${{steps.query_meta.outputs.last_processed_height}}" >> output/benchmark/benchmark.log
-          echo "------------------------------------" >> indexing.log
+          echo "------------------------------------" >> output/benchmark/benchmark.log
 
       - name: Prepare benchmark log
         run: |

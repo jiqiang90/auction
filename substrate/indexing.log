@@ -1,1 +1,456 @@
-Simulate app start
+{"level":"info","timestamp":"2023-07-20T00:07:25.917Z","pid":1166,"hostname":"c55b7a1ab07a","category":"subql-node","message":"Current @subql/node version is 2.9.3"}
+{"level":"warn","timestamp":"2023-07-20T00:07:26.334Z","pid":1166,"hostname":"c55b7a1ab07a","category":"db","message":"Database does not support SSL connection, will try to connect without it"}
+{"level":"info","timestamp":"2023-07-20T00:07:29.364Z","pid":1166,"hostname":"c55b7a1ab07a","category":"indexer","message":"indexer manager start"}
+{"level":"info","timestamp":"2023-07-20T00:07:30.016Z","pid":1166,"hostname":"c55b7a1ab07a","category":"store","message":"Historical state is disabled"}
+{"level":"info","timestamp":"2023-07-20T00:07:30.123Z","pid":1166,"hostname":"c55b7a1ab07a","category":"UnfinalizedBlocks","message":"Unfinalized blocks is disabled"}
+{"level":"info","timestamp":"2023-07-20T00:07:30.194Z","pid":1166,"hostname":"c55b7a1ab07a","category":"dynamic-ds","message":"Loaded 0 dynamic datasources"}
+{"level":"info","timestamp":"2023-07-20T00:07:40.113Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#4","message":"Starting Nest application..."}
+{"level":"info","timestamp":"2023-07-20T00:07:40.557Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#4","message":"WorkerModule dependencies initialized"}
+{"level":"info","timestamp":"2023-07-20T00:07:40.570Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#4","message":"DiscoveryModule dependencies initialized"}
+{"level":"info","timestamp":"2023-07-20T00:07:40.570Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#4","message":"EventEmitterModule dependencies initialized"}
+{"level":"info","timestamp":"2023-07-20T00:07:40.570Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#4","message":"ScheduleModule dependencies initialized"}
+{"level":"warn","timestamp":"2023-07-20T00:07:40.582Z","pid":1166,"hostname":"c55b7a1ab07a","category":"db","message":"Database does not support SSL connection, will try to connect without it"}
+{"level":"info","timestamp":"2023-07-20T00:07:40.608Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#1","message":"Starting Nest application..."}
+{"level":"info","timestamp":"2023-07-20T00:07:40.624Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#2","message":"Starting Nest application..."}
+{"level":"info","timestamp":"2023-07-20T00:07:40.638Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#3","message":"Starting Nest application..."}
+{"level":"info","timestamp":"2023-07-20T00:07:40.659Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#4","message":"ConfigureModule dependencies initialized"}
+{"level":"info","timestamp":"2023-07-20T00:07:40.839Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#1","message":"WorkerModule dependencies initialized"}
+{"level":"info","timestamp":"2023-07-20T00:07:40.843Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#1","message":"DiscoveryModule dependencies initialized"}
+{"level":"info","timestamp":"2023-07-20T00:07:40.844Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#1","message":"EventEmitterModule dependencies initialized"}
+{"level":"info","timestamp":"2023-07-20T00:07:40.844Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#1","message":"ScheduleModule dependencies initialized"}
+{"level":"warn","timestamp":"2023-07-20T00:07:40.861Z","pid":1166,"hostname":"c55b7a1ab07a","category":"db","message":"Database does not support SSL connection, will try to connect without it"}
+{"level":"info","timestamp":"2023-07-20T00:07:40.903Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#2","message":"WorkerModule dependencies initialized"}
+{"level":"info","timestamp":"2023-07-20T00:07:40.912Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#2","message":"DiscoveryModule dependencies initialized"}
+{"level":"info","timestamp":"2023-07-20T00:07:40.912Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#2","message":"EventEmitterModule dependencies initialized"}
+{"level":"info","timestamp":"2023-07-20T00:07:40.912Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#2","message":"ScheduleModule dependencies initialized"}
+{"level":"info","timestamp":"2023-07-20T00:07:40.922Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#3","message":"WorkerModule dependencies initialized"}
+{"level":"warn","timestamp":"2023-07-20T00:07:40.929Z","pid":1166,"hostname":"c55b7a1ab07a","category":"db","message":"Database does not support SSL connection, will try to connect without it"}
+{"level":"info","timestamp":"2023-07-20T00:07:40.928Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#3","message":"DiscoveryModule dependencies initialized"}
+{"level":"info","timestamp":"2023-07-20T00:07:40.928Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#3","message":"EventEmitterModule dependencies initialized"}
+{"level":"info","timestamp":"2023-07-20T00:07:40.928Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#3","message":"ScheduleModule dependencies initialized"}
+{"level":"info","timestamp":"2023-07-20T00:07:40.960Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#1","message":"ConfigureModule dependencies initialized"}
+{"level":"warn","timestamp":"2023-07-20T00:07:40.945Z","pid":1166,"hostname":"c55b7a1ab07a","category":"db","message":"Database does not support SSL connection, will try to connect without it"}
+{"level":"info","timestamp":"2023-07-20T00:07:41.024Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#2","message":"ConfigureModule dependencies initialized"}
+{"level":"info","timestamp":"2023-07-20T00:07:41.068Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#3","message":"ConfigureModule dependencies initialized"}
+{"level":"info","timestamp":"2023-07-20T00:07:43.629Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#4","message":"DbModule dependencies initialized"}
+{"level":"info","timestamp":"2023-07-20T00:07:43.630Z","pid":1166,"hostname":"c55b7a1ab07a","category":"indexer","message":"indexer manager start"}
+{"level":"info","timestamp":"2023-07-20T00:07:43.630Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#4","message":"IndexerModule dependencies initialized"}
+{"level":"info","timestamp":"2023-07-20T00:07:43.650Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#4","message":"Nest application successfully started"}
+{"level":"info","timestamp":"2023-07-20T00:07:43.661Z","pid":1166,"hostname":"c55b7a1ab07a","category":"store","message":"Historical state is disabled"}
+{"level":"info","timestamp":"2023-07-20T00:07:43.710Z","pid":1166,"hostname":"c55b7a1ab07a","category":"indexer","message":"indexer manager started"}
+{"level":"info","timestamp":"2023-07-20T00:07:43.890Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#1","message":"DbModule dependencies initialized"}
+{"level":"info","timestamp":"2023-07-20T00:07:43.891Z","pid":1166,"hostname":"c55b7a1ab07a","category":"indexer","message":"indexer manager start"}
+{"level":"info","timestamp":"2023-07-20T00:07:43.892Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#1","message":"IndexerModule dependencies initialized"}
+{"level":"info","timestamp":"2023-07-20T00:07:43.910Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#1","message":"Nest application successfully started"}
+{"level":"info","timestamp":"2023-07-20T00:07:43.922Z","pid":1166,"hostname":"c55b7a1ab07a","category":"store","message":"Historical state is disabled"}
+{"level":"info","timestamp":"2023-07-20T00:07:43.974Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#2","message":"DbModule dependencies initialized"}
+{"level":"info","timestamp":"2023-07-20T00:07:43.979Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#3","message":"DbModule dependencies initialized"}
+{"level":"info","timestamp":"2023-07-20T00:07:43.995Z","pid":1166,"hostname":"c55b7a1ab07a","category":"indexer","message":"indexer manager started"}
+{"level":"info","timestamp":"2023-07-20T00:07:43.984Z","pid":1166,"hostname":"c55b7a1ab07a","category":"indexer","message":"indexer manager start"}
+{"level":"info","timestamp":"2023-07-20T00:07:43.984Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#3","message":"IndexerModule dependencies initialized"}
+{"level":"info","timestamp":"2023-07-20T00:07:44.007Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#3","message":"Nest application successfully started"}
+{"level":"info","timestamp":"2023-07-20T00:07:43.975Z","pid":1166,"hostname":"c55b7a1ab07a","category":"indexer","message":"indexer manager start"}
+{"level":"info","timestamp":"2023-07-20T00:07:43.975Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#2","message":"IndexerModule dependencies initialized"}
+{"level":"info","timestamp":"2023-07-20T00:07:44.010Z","pid":1166,"hostname":"c55b7a1ab07a","category":"nestjs-#2","message":"Nest application successfully started"}
+{"level":"info","timestamp":"2023-07-20T00:07:44.025Z","pid":1166,"hostname":"c55b7a1ab07a","category":"store","message":"Historical state is disabled"}
+{"level":"info","timestamp":"2023-07-20T00:07:44.032Z","pid":1166,"hostname":"c55b7a1ab07a","category":"store","message":"Historical state is disabled"}
+{"level":"info","timestamp":"2023-07-20T00:07:44.077Z","pid":1166,"hostname":"c55b7a1ab07a","category":"indexer","message":"indexer manager started"}
+{"level":"info","timestamp":"2023-07-20T00:07:44.085Z","pid":1166,"hostname":"c55b7a1ab07a","category":"indexer","message":"indexer manager started"}
+{"level":"info","timestamp":"2023-07-20T00:07:44.089Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1...15, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:44.090Z","pid":1166,"hostname":"c55b7a1ab07a","category":"subql-node","message":"Node started on port: 3000"}
+{"level":"info","timestamp":"2023-07-20T00:07:44.093Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 16...30, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:44.096Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 31...45, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:44.097Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 46...60, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:44.098Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 61...75, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:44.099Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 76...90, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:44.100Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 91...105, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:44.101Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 106...120, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:44.392Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":1,\"fetchedBlocks\":0,\"toFetchBlocks\":0,\"isIndexing\":false}"}
+{"level":"info","timestamp":"2023-07-20T00:07:44.393Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":2,\"fetchedBlocks\":0,\"toFetchBlocks\":0,\"isIndexing\":false}"}
+{"level":"info","timestamp":"2023-07-20T00:07:44.393Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":3,\"fetchedBlocks\":0,\"toFetchBlocks\":120,\"isIndexing\":false}"}
+{"level":"info","timestamp":"2023-07-20T00:07:44.394Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":4,\"fetchedBlocks\":0,\"toFetchBlocks\":0,\"isIndexing\":false}"}
+{"level":"info","timestamp":"2023-07-20T00:07:46.104Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 121...135, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:46.126Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 136...150, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:47.143Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 151...165, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:47.323Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 166...180, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:48.414Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 181...195, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:48.556Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 196...210, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:48.564Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 211...225, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:48.568Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 226...240, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:49.572Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 241...255, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:49.794Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 256...270, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:50.799Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 271...285, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:50.807Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 286...300, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:51.828Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 301...315, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:51.832Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 316...330, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:51.841Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 331...345, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:51.860Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 346...360, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:52.877Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 361...375, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:52.978Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 376...390, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:52.981Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 391...405, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:53.989Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 406...420, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:53.994Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 421...435, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:54.007Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 436...450, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:54.014Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 451...465, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:54.023Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 466...480, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:55.034Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 481...495, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:55.045Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 496...510, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:55.061Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 511...525, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:56.066Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 526...540, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:56.068Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 541...555, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:56.075Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 556...570, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:56.083Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 571...585, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:56.094Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 586...600, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:57.103Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 601...615, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:57.188Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 616...630, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:57.202Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 631...645, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:57.212Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 646...660, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:58.228Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 661...675, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:58.248Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 676...690, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:59.373Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 691...705, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:59.383Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 706...720, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:59.393Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":1,\"fetchedBlocks\":38,\"toFetchBlocks\":0,\"isIndexing\":false}"}
+{"level":"info","timestamp":"2023-07-20T00:07:59.395Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":2,\"fetchedBlocks\":0,\"toFetchBlocks\":15,\"isIndexing\":false}"}
+{"level":"info","timestamp":"2023-07-20T00:07:59.400Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 721...735, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:59.405Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":3,\"fetchedBlocks\":0,\"toFetchBlocks\":0,\"isIndexing\":false}"}
+{"level":"info","timestamp":"2023-07-20T00:07:59.405Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":4,\"fetchedBlocks\":0,\"toFetchBlocks\":0,\"isIndexing\":false}"}
+{"level":"info","timestamp":"2023-07-20T00:07:59.406Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 736...750, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:07:59.414Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 751...765, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:00.426Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 766...780, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:00.444Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 781...795, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:00.453Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 796...810, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:01.461Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 811...825, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:01.470Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 826...840, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:01.479Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 841...855, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:02.490Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 856...870, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:02.494Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 871...885, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:02.496Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 886...900, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:02.497Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 901...915, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:03.515Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 916...930, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:03.527Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 931...945, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:03.536Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 946...960, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:03.545Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 961...975, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:04.573Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 976...990, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:04.591Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 991...1005, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:04.602Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1006...1020, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:04.613Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1021...1035, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:04.622Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1036...1050, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:05.631Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1051...1065, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:05.713Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1066...1080, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:06.718Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1081...1095, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:06.735Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1096...1110, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:06.745Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1111...1125, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:06.759Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1126...1140, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:06.788Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1141...1155, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:07.794Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1156...1170, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:07.869Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1171...1185, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:07.879Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1186...1200, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:08.889Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1201...1215, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:08.897Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1216...1230, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:08.905Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1231...1245, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:08.914Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1246...1260, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:09.926Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1261...1275, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:09.943Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1276...1290, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:09.953Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1291...1305, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:10.968Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1306...1320, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:10.977Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1321...1335, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:10.980Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1336...1350, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:10.989Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1351...1365, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:11.335Z","pid":1166,"hostname":"c55b7a1ab07a","category":"benchmark","message":"INDEXING: 50.96 blocks/s. Target height: 16,474,434. Current height: 1,270. Estimated time remaining: 3 days 17 hours 47 mins"}
+{"level":"info","timestamp":"2023-07-20T00:08:11.992Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1366...1380, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:12.004Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1381...1395, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:12.033Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1396...1410, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:12.054Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1411...1425, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:13.064Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1426...1440, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:13.086Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1441...1455, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:13.100Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1456...1470, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:13.126Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1471...1485, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:14.134Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1486...1500, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:14.141Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1501...1515, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:14.149Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1516...1530, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:14.395Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":1,\"fetchedBlocks\":54,\"toFetchBlocks\":0,\"isIndexing\":false}"}
+{"level":"info","timestamp":"2023-07-20T00:08:14.413Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":2,\"fetchedBlocks\":2,\"toFetchBlocks\":43,\"isIndexing\":false}"}
+{"level":"info","timestamp":"2023-07-20T00:08:14.413Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":3,\"fetchedBlocks\":0,\"toFetchBlocks\":0,\"isIndexing\":false}"}
+{"level":"info","timestamp":"2023-07-20T00:08:14.414Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":4,\"fetchedBlocks\":0,\"toFetchBlocks\":0,\"isIndexing\":false}"}
+{"level":"info","timestamp":"2023-07-20T00:08:15.158Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1531...1545, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:15.184Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1546...1560, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:15.193Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1561...1575, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:15.206Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1576...1590, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:15.229Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1591...1605, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:16.240Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1606...1620, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:16.245Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1621...1635, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:16.252Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1636...1650, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:17.256Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1651...1665, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:17.268Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1666...1680, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:17.273Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1681...1695, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:17.280Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1696...1710, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:18.283Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1711...1725, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:18.290Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1726...1740, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:19.301Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1741...1755, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:19.355Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1756...1770, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:19.364Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1771...1785, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:19.374Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1786...1800, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:19.384Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1801...1815, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:20.398Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1816...1830, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:20.471Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1831...1845, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:20.496Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1846...1860, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:20.511Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1861...1875, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:21.522Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1876...1890, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:21.528Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1891...1905, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:21.537Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1906...1920, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:22.545Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1921...1935, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:22.549Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1936...1950, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:22.558Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1951...1965, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:22.566Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1966...1980, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:23.574Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1981...1995, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:23.674Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 1996...2010, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:24.683Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2011...2025, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:24.686Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2026...2040, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:24.695Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2041...2055, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:24.703Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2056...2070, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:24.727Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2071...2085, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:24.737Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2086...2100, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:25.745Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2101...2115, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:25.778Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2116...2130, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:25.793Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2131...2145, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:26.330Z","pid":1166,"hostname":"c55b7a1ab07a","category":"benchmark","message":"INDEXING: 52.66 blocks/s. Target height: 16,474,436. Current height: 2,060. Estimated time remaining: 3 days 14 hours 53 mins"}
+{"level":"info","timestamp":"2023-07-20T00:08:26.805Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2146...2160, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:26.810Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2161...2175, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:26.813Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2176...2190, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:27.825Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2191...2205, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:27.830Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2206...2220, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:27.838Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2221...2235, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:28.856Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2236...2250, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:28.859Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2251...2265, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:28.877Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2266...2280, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:28.888Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2281...2295, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:29.523Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":1,\"fetchedBlocks\":31,\"toFetchBlocks\":29,\"isIndexing\":false}"}
+{"level":"info","timestamp":"2023-07-20T00:08:29.524Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":2,\"fetchedBlocks\":21,\"toFetchBlocks\":0,\"isIndexing\":true}"}
+{"level":"info","timestamp":"2023-07-20T00:08:29.525Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":3,\"fetchedBlocks\":0,\"toFetchBlocks\":0,\"isIndexing\":false}"}
+{"level":"info","timestamp":"2023-07-20T00:08:29.527Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":4,\"fetchedBlocks\":0,\"toFetchBlocks\":0,\"isIndexing\":false}"}
+{"level":"info","timestamp":"2023-07-20T00:08:29.897Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2296...2310, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:29.902Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2311...2325, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:29.914Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2326...2340, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:29.929Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2341...2355, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:29.939Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2356...2370, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:30.947Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2371...2385, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:30.957Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2386...2400, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:30.970Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2401...2415, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:32.240Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2416...2430, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:32.250Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2431...2445, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:32.266Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2446...2460, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:32.277Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2461...2475, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:32.290Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2476...2490, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:32.307Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2491...2505, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:33.318Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2506...2520, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:33.387Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2521...2535, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:33.402Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2536...2550, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:34.413Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2551...2565, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:34.541Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2566...2580, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:34.562Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2581...2595, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:35.572Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2596...2610, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:35.582Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2611...2625, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:35.590Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2626...2640, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:35.597Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2641...2655, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:36.606Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2656...2670, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:36.609Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2671...2685, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:36.617Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2686...2700, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:37.627Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2701...2715, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:37.637Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2716...2730, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:37.646Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2731...2745, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:37.655Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2746...2760, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:38.663Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2761...2775, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:38.672Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2776...2790, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:38.693Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2791...2805, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:38.702Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2806...2820, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:38.710Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2821...2835, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:39.713Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2836...2850, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:39.739Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2851...2865, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:39.750Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2866...2880, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:39.873Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2881...2895, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:40.884Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2896...2910, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:40.893Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2911...2925, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:40.901Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2926...2940, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:40.918Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2941...2955, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:41.334Z","pid":1166,"hostname":"c55b7a1ab07a","category":"benchmark","message":"INDEXING: 53.53 blocks/s. Target height: 16,474,438. Current height: 2,863. Estimated time remaining: 3 days 13 hours 28 mins"}
+{"level":"info","timestamp":"2023-07-20T00:08:41.928Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2956...2970, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:41.940Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2971...2985, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:41.949Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 2986...3000, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:41.957Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3001...3015, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:41.973Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3016...3030, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:42.985Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3031...3045, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:43.031Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3046...3060, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:43.041Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3061...3075, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:44.048Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3076...3090, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:44.054Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3091...3105, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:44.058Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3106...3120, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:44.070Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3121...3135, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:44.077Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3136...3150, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:44.408Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":1,\"fetchedBlocks\":17,\"toFetchBlocks\":0,\"isIndexing\":false}"}
+{"level":"info","timestamp":"2023-07-20T00:08:44.412Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":2,\"fetchedBlocks\":16,\"toFetchBlocks\":59,\"isIndexing\":false}"}
+{"level":"info","timestamp":"2023-07-20T00:08:44.414Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":3,\"fetchedBlocks\":0,\"toFetchBlocks\":0,\"isIndexing\":false}"}
+{"level":"info","timestamp":"2023-07-20T00:08:44.415Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":4,\"fetchedBlocks\":0,\"toFetchBlocks\":0,\"isIndexing\":false}"}
+{"level":"info","timestamp":"2023-07-20T00:08:45.086Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3151...3165, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:45.100Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3166...3180, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:45.110Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3181...3195, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:45.322Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3196...3210, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:46.327Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3211...3225, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:46.338Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3226...3240, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:46.359Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3241...3255, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:46.369Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3256...3270, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:46.379Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3271...3285, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:46.387Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3286...3300, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:47.415Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3301...3315, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:47.466Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3316...3330, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:47.473Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3331...3345, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:48.482Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3346...3360, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:48.495Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3361...3375, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:48.514Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3376...3390, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:48.525Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3391...3405, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:48.537Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3406...3420, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:48.554Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3421...3435, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:49.572Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3436...3450, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:49.664Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3451...3465, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:49.669Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3466...3480, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:50.680Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3481...3495, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:50.688Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3496...3510, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:51.704Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3511...3525, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:51.723Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3526...3540, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:51.728Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3541...3555, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:51.740Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3556...3570, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:51.749Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3571...3585, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:51.757Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3586...3600, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:52.760Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3601...3615, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:52.774Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3616...3630, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:52.835Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3631...3645, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:52.852Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3646...3660, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:53.860Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3661...3675, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:53.875Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3676...3690, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:53.883Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3691...3705, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:53.892Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3706...3720, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:53.900Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3721...3735, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:54.912Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3736...3750, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:54.915Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3751...3765, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:55.917Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3766...3780, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:55.925Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3781...3795, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:55.941Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3796...3810, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:55.949Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3811...3825, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:55.957Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3826...3840, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:56.335Z","pid":1166,"hostname":"c55b7a1ab07a","category":"benchmark","message":"INDEXING: 59.56 blocks/s. Target height: 16,474,441. Current height: 3,757. Estimated time remaining: 3 days 04 hours 48 mins"}
+{"level":"info","timestamp":"2023-07-20T00:08:56.966Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3841...3855, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:56.969Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3856...3870, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:56.978Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3871...3885, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:57.999Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3886...3900, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:58.017Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3901...3915, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:58.020Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3916...3930, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:58.021Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3931...3945, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:59.028Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3946...3960, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:59.034Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3961...3975, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:59.042Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3976...3990, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:08:59.413Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":1,\"fetchedBlocks\":0,\"toFetchBlocks\":0,\"isIndexing\":false}"}
+{"level":"info","timestamp":"2023-07-20T00:08:59.423Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":2,\"fetchedBlocks\":0,\"toFetchBlocks\":0,\"isIndexing\":false}"}
+{"level":"info","timestamp":"2023-07-20T00:08:59.563Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":3,\"fetchedBlocks\":61,\"toFetchBlocks\":29,\"isIndexing\":true}"}
+{"level":"info","timestamp":"2023-07-20T00:08:59.563Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":4,\"fetchedBlocks\":0,\"toFetchBlocks\":0,\"isIndexing\":false}"}
+{"level":"info","timestamp":"2023-07-20T00:09:00.050Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 3991...4005, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:00.059Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4006...4020, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:00.076Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4021...4035, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:00.083Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4036...4050, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:01.096Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4051...4065, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:01.099Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4066...4080, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:01.123Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4081...4095, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:01.133Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4096...4110, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:01.142Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4111...4125, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:02.151Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4126...4140, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:02.266Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4141...4155, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:03.280Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4156...4170, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:03.289Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4171...4185, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:03.298Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4186...4200, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:03.307Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4201...4215, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:03.322Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4216...4230, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:04.337Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4231...4245, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:04.396Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4246...4260, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:04.405Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4261...4275, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:05.417Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4276...4290, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:05.434Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4291...4305, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:05.443Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4306...4320, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:05.451Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4321...4335, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:06.460Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4336...4350, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:06.471Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4351...4365, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:06.482Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4366...4380, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:07.488Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4381...4395, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:07.490Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4396...4410, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:07.498Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4411...4425, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:07.514Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4426...4440, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:07.523Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4441...4455, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:08.535Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4456...4470, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:08.566Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4471...4485, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:08.575Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4486...4500, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:09.586Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4501...4515, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:09.597Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4516...4530, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:09.606Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4531...4545, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:09.618Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4546...4560, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:09.629Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4561...4575, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:09.638Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4576...4590, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:09.654Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4591...4605, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:10.664Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4606...4620, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:10.705Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4621...4635, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:10.738Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4636...4650, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:11.346Z","pid":1166,"hostname":"c55b7a1ab07a","category":"benchmark","message":"INDEXING: 53.32 blocks/s. Target height: 16,474,443. Current height: 4,556. Estimated time remaining: 3 days 13 hours 47 mins"}
+{"level":"info","timestamp":"2023-07-20T00:09:11.761Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4651...4665, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:11.769Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4666...4680, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:11.776Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4681...4695, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:11.784Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4696...4710, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:12.792Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4711...4725, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:12.811Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4726...4740, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:12.822Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4741...4755, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:13.835Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4756...4770, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:13.842Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4771...4785, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:13.850Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4786...4800, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:14.418Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":1,\"fetchedBlocks\":0,\"toFetchBlocks\":0,\"isIndexing\":false}"}
+{"level":"info","timestamp":"2023-07-20T00:09:14.418Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":2,\"fetchedBlocks\":0,\"toFetchBlocks\":0,\"isIndexing\":false}"}
+{"level":"info","timestamp":"2023-07-20T00:09:14.418Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":3,\"fetchedBlocks\":0,\"toFetchBlocks\":0,\"isIndexing\":false}"}
+{"level":"info","timestamp":"2023-07-20T00:09:14.419Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"{\"threadId\":4,\"fetchedBlocks\":62,\"toFetchBlocks\":14,\"isIndexing\":false}"}
+{"level":"info","timestamp":"2023-07-20T00:09:14.860Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4801...4815, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:14.871Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4816...4830, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:14.889Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4831...4845, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:14.899Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4846...4860, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:14.908Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4861...4875, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:15.929Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4876...4890, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:15.938Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4891...4905, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:16.002Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4906...4920, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:17.081Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4921...4935, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:17.084Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4936...4950, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:17.086Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4951...4965, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:17.093Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4966...4980, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:18.100Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4981...4995, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:18.122Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 4996...5010, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:18.145Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5011...5025, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:18.146Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5026...5040, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:19.197Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5041...5055, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:19.203Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5056...5070, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:19.224Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5071...5085, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:19.230Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5086...5100, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:19.236Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5101...5115, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:20.249Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5116...5130, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:20.262Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5131...5145, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:20.275Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5146...5160, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:20.504Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5161...5175, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:20.506Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5176...5190, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:21.516Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5191...5205, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:21.525Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5206...5220, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:21.533Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5221...5235, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:21.542Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5236...5250, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:21.560Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5251...5265, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:22.569Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5266...5280, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:22.579Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5281...5295, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:22.591Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5296...5310, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:23.597Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5311...5325, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:23.609Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5326...5340, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:23.621Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5341...5355, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:23.639Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5356...5370, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:24.647Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5371...5385, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:24.662Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5386...5400, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:24.674Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5401...5415, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:24.702Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5416...5430, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:25.751Z","pid":1166,"hostname":"c55b7a1ab07a","category":"WorkerBlockDispatcherService","message":"Enqueueing blocks 5431...5445, total 15 blocks"}
+{"level":"info","timestamp":"2023-07-20T00:09:26.346Z","pid":1166,"hostname":"c55b7a1ab07a","category":"benchmark","message":"INDEXING: 53.93 blocks/s. Target height: 16,474,446. Current height: 5,366. Estimated time remaining: 3 days 12 hours 49 mins"}

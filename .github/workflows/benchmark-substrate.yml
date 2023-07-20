@@ -116,7 +116,7 @@ jobs:
         run: |
           version_line=$(grep -oE 'Current @subql/node version is.*' output/benchmark/indexing.log)
           # Use cut to extract the version from the line
-          version=$(echo "$version_line" | cut -d' ' -f7)
+          version=$(echo "$version_line" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')
           echo "::set-output name=version::$version"    
           
           
@@ -130,8 +130,8 @@ jobs:
           echo "disableHistorical=${{github.event.inputs.disableHistorical}}" >> output/benchmark/benchmark.log
           echo "batch-size=${{github.event.inputs.batch-size}}" >> output/benchmark/benchmark.log
           echo "workers=${{github.event.inputs.workers}}" >> output/benchmark/benchmark.log
-          if [ -n "${{github.event.inputs.workers}}" ]; then
-            echo "others=${{github.event.inputs.workers}}" >> output/benchmark/benchmark.log
+          if [ -n "${{github.event.inputs.others}}" ]; then
+            echo "others=${{github.event.inputs.others}}" >> output/benchmark/benchmark.log
           fi     
 
       - name: Prepare benchmark log

@@ -156,7 +156,7 @@ jobs:
       - name: Upload reports
         uses: actions/upload-artifact@v3
         with:
-          name: benchmark-${{steps.current-time.outputs.formattedTime}}-${{steps.query_meta.outputs.runner_node}}@${{steps.query_meta.outputs.indexer_version}}
+          name: benchmark-${{steps.current-time.outputs.formattedTime}}-${{steps.query_meta.outputs.indexer_version}}
           path: output/benchmark/
 
 

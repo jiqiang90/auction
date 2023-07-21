@@ -76,9 +76,6 @@ jobs:
           apt-get update
           apt-get install -y docker.io  
 
-      - name: test docker
-        run: docker --version
-
       - name: Install PostgreSQL client
         run: |
           apt-get update
@@ -100,9 +97,10 @@ jobs:
             echo "Benchmark report directory already exists: $output_dir"
           fi    
 
-      - name: Build indexer docker file
+      - name: Re-build latest indexer docker file
         run: |
-          docker build -t my_indexer --build-arg input_indexer_version=latest --build-arg input_cpus=${{github.event.inputs.cpus}} --build-arg input_memory=${{github.event.inputs.memory}} .github/workflows/scripts/benchmark/
+          docker rmi my_indexer:latest || true
+          docker build -t my_indexer --build-arg input_indexer_version=${{github.event.inputs.indexerVersion}} --build-arg input_cpus=${{github.event.inputs.cpus}} --build-arg input_memory=${{github.event.inputs.memory}} .github/workflows/scripts/benchmark/
 
       - name: Benchmarking
         id: app

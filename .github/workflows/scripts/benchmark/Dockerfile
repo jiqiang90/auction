@@ -23,8 +23,8 @@ RUN npm i @subql/node@$INDEXER_VERSION -g
 COPY . .
 
 # Custom script to run the Node.js app and handle other tasks
-COPY benchmarking-docker.sh /app/benchmarking-docker.sh
-RUN chmod +x /app/benchmarking-docker.sh
+COPY benchmarking.sh /app/benchmarking.sh
+RUN chmod +x /app/benchmarking.sh
 
 # Set the entrypoint to the script
-ENTRYPOINT ["/bin/bash", "/app/benchmarking-docker.sh"]
+ENTRYPOINT ["/bin/bash", "/app/benchmarking.sh"]

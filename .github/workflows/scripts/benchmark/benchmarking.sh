@@ -10,12 +10,25 @@ input_workers=$5
 input_disableHistorical=$6
 input_others=$7
 
+# Create the output directory if it doesn't exist
+output_dir="/app/output/benchmark/"
+if [ ! -d "$output_dir" ]; then
+  mkdir -p "$output_dir"
+  echo "Created directory: $output_dir"
+else
+  echo "Benchmark report directory already exists: $output_dir"
+fi
+
 # Start the Node.js app in the background and save its PID
-subql-node -f ipfs://$input_deployment --network-endpoint=$input_endpoint --batch-size=$input_batch_size --workers=$input_workers --disable-historical=$input_disableHistorical $input_others --ipfs='https://unauthipfs.subquery.network/ipfs/api/v0' --output-fmt=json --db-schema=app > output/benchmark/indexing.log 2>&1 &
+#subql-node -f ipfs://$input_deployment --network-endpoint=$input_endpoint --batch-size=$input_batch_size --workers=$input_workers --disable-historical=$input_disableHistorical $input_others --ipfs='https://unauthipfs.subquery.network/ipfs/api/v0' --db-schema=app > /app/output/benchmark/indexing.log 2>&1 &
+echo "Running: subql-node -f ipfs://$input_deployment --network-endpoint=$input_endpoint --debug --ipfs='https://unauthipfs.subquery.network/ipfs/api/v0' --db-schema=app > /app/output/benchmark/indexing.log 2>&1 &"
+
+subql-node -f ipfs://$input_deployment --network-endpoint=$input_endpoint --debug --ipfs='https://unauthipfs.subquery.network/ipfs/api/v0' --db-schema=app > /app/output/benchmark/indexing.log 2>&1 &
+
 APP_PID=$!
 
 
-echo "Benchmarking timeout: $input_duration "
+echo "Benchmarking timeout: $input_duration"
 # Wait for timeout
 sleep $input_duration
 

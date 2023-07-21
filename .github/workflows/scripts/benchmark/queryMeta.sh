@@ -4,6 +4,9 @@
 
 psql -h postgres -d postgres -U postgres -c "SELECT schema_name FROM information_schema.schemata;"
 
+psql -h postgres -d postgres -U postgres -c "\dt public.*"
+
+
 runner_node=$(psql -h postgres -d postgres -U postgres -c "SELECT value FROM app._metadata WHERE key = 'runnerNode';" | awk 'NR == 3 {print $1}' | tr -d '"')
 indexer_version=$(psql -h postgres -d postgres -U postgres -c "SELECT value FROM app._metadata WHERE key = 'indexerNodeVersion';" | awk 'NR == 3 {print $1}' | tr -d '"')
 start_height=$(psql -h postgres -d postgres -U postgres -c "SELECT value::integer FROM app._metadata WHERE key = 'startHeight';" | awk 'NR == 3 {print $1}')

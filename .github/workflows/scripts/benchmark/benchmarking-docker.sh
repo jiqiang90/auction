@@ -20,7 +20,9 @@ else
 fi
 
 # Start the Node.js app in the background and save its PID
-subql-node -f ipfs://$input_deployment --network-endpoint=$input_endpoint --batch-size=$input_batch_size --workers=$input_workers --disable-historical=$input_disableHistorical $input_others --ipfs='https://unauthipfs.subquery.network/ipfs/api/v0' --db-schema=app > /app/output/benchmark/indexing.log 2>&1 &
+#subql-node -f ipfs://$input_deployment --network-endpoint=$input_endpoint --batch-size=$input_batch_size --workers=$input_workers --disable-historical=$input_disableHistorical $input_others --ipfs='https://unauthipfs.subquery.network/ipfs/api/v0' --db-schema=app > /app/output/benchmark/indexing.log 2>&1 &
+subql-node -f ipfs://$input_deployment --network-endpoint=$input_endpoint --debug --ipfs='https://unauthipfs.subquery.network/ipfs/api/v0' --db-schema=app > /app/output/benchmark/indexing.log 2>&1 &
+
 APP_PID=$!
 
 

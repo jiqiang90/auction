@@ -89,7 +89,7 @@ jobs:
 
       - name: Ensure clean reports directory
         run: |
-          output_dir="/output/benchmark/"
+          output_dir="output/benchmark/"
           chmod +x .github/workflows/scripts/benchmark/cleanHistory.sh
           .github/workflows/scripts/benchmark/cleanHistory.sh $output_dir
 

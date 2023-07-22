@@ -91,7 +91,7 @@ jobs:
         run: |
           output_dir="/output/benchmark/"
           chmod +x .github/workflows/scripts/benchmark/cleanHistory.sh
-          .github/workflows/scripts/benchmark/cleanHistory.sh output_dir
+          .github/workflows/scripts/benchmark/cleanHistory.sh $output_dir
 
       - name: Re-build latest indexer docker file
         run: |

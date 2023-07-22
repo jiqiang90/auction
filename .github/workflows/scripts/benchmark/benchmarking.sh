@@ -12,7 +12,7 @@ input_others=$7
 
 # Clean docker container history
 output_dir="/app/output/benchmark/"
-. cleanHistory.sh output_dir
+. cleanHistory.sh $output_dir
 
 
 # Start the Node.js app in the background and save its PID

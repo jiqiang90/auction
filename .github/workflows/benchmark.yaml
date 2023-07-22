@@ -89,15 +89,9 @@ jobs:
 
       - name: Ensure clean reports directory
         run: |
-          output_dir="output/benchmark/"
-        # Check if the directory exists
-          if [ -d "$output_dir" ]; then
-            echo "Removing existing directory: $output_dir"
-            rm -rf "$output_dir"
-          fi
-          # Create the new directory
-          echo "Creating new directory: $output_dir"
-          mkdir -p "$output_dir"
+          output_dir="/output/benchmark/"
+          chmod +x .github/workflows/scripts/benchmark/cleanHistory.sh
+          .github/workflows/scripts/benchmark/cleanHistory.sh output_dir
 
       - name: Re-build latest indexer docker file
         run: |

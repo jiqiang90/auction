@@ -10,16 +10,9 @@ input_workers=$5
 input_disableHistorical=$6
 input_others=$7
 
-
+# Clean docker container history
 output_dir="/app/output/benchmark/"
-# Check if the directory exists
-if [ -d "$output_dir" ]; then
-  echo "Removing history benchmark directory in docker: $output_dir"
-  rm -rf "$output_dir"
-fi
-# Create the new directory
-echo "Creating new directory: $output_dir"
-mkdir -p "$output_dir"
+. cleanHistory.sh output_dir
 
 
 # Start the Node.js app in the background and save its PID

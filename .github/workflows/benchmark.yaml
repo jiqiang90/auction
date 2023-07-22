@@ -93,9 +93,14 @@ jobs:
           chmod +x .github/workflows/scripts/benchmark/cleanHistory.sh
           .github/workflows/scripts/benchmark/cleanHistory.sh $output_dir
 
-      - name: Re-build latest indexer docker file
+      - name: Clean last container && re-build latest indexer docker file
         run: |
           docker rmi my_indexer:latest || true
+          CONTAINER_NAME="my_container"
+          docker stop $CONTAINER_NAME || true
+          docker rm -f $CONTAINER_NAME || true
+          VOLUME_NAME="${CONTAINER_NAME}_data"
+          docker volume rm $VOLUME_NAME || true
           docker build -t my_indexer --build-arg input_indexer_version=${{github.event.inputs.indexerVersion}} --build-arg input_cpus=${{github.event.inputs.cpus}} --build-arg input_memory=${{github.event.inputs.memory}} .github/workflows/scripts/benchmark/
 
       - name: Benchmarking

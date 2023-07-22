@@ -87,15 +87,17 @@ jobs:
         env:
           PGPASSWORD: postgres
 
-      - name: Ensure reports path exists
+      - name: Ensure clean reports directory
         run: |
           output_dir="output/benchmark/"
-          if [ ! -d "$output_dir" ]; then
-            mkdir -p "$output_dir"
-            echo "Created directory: $output_dir"
-          else
-            echo "Benchmark report directory already exists: $output_dir"
-          fi    
+        # Check if the directory exists
+          if [ -d "$output_dir" ]; then
+            echo "Removing existing directory: $output_dir"
+            rm -rf "$output_dir"
+          fi
+          # Create the new directory
+          echo "Creating new directory: $output_dir"
+          mkdir -p "$output_dir"
 
       - name: Re-build latest indexer docker file
         run: |

@@ -10,14 +10,17 @@ input_workers=$5
 input_disableHistorical=$6
 input_others=$7
 
-# Create the output directory if it doesn't exist
+
 output_dir="/app/output/benchmark/"
-if [ ! -d "$output_dir" ]; then
-  mkdir -p "$output_dir"
-  echo "Created directory: $output_dir"
-else
-  echo "Benchmark report directory already exists: $output_dir"
+# Check if the directory exists
+if [ -d "$output_dir" ]; then
+  echo "Removing history benchmark directory in docker: $output_dir"
+  rm -rf "$output_dir"
 fi
+# Create the new directory
+echo "Creating new directory: $output_dir"
+mkdir -p "$output_dir"
+
 
 # Start the Node.js app in the background and save its PID
 #subql-node -f ipfs://$input_deployment --network-endpoint=$input_endpoint --batch-size=$input_batch_size --workers=$input_workers --disable-historical=$input_disableHistorical $input_others --ipfs='https://unauthipfs.subquery.network/ipfs/api/v0' --db-schema=app > /app/output/benchmark/indexing.log 2>&1 &

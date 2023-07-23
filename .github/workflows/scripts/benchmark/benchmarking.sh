@@ -21,6 +21,13 @@ echo "DB_DATABASE: $DB_DATABASE"
 echo "DB_HOST: $DB_HOST"
 echo "DB_PORT: $DB_PORT"
 
+echo "Test db connection"
+apt-get update
+apt-get install --yes postgresql-client
+psql -h postgres -d postgres -U postgres -c -p 5432 "SELECT schema_name FROM information_schema.schemata;"
+
+
+
 
 # Start the Node.js app in the background and save its PID
 #subql-node -f ipfs://$input_deployment --network-endpoint=$input_endpoint --batch-size=$input_batch_size --workers=$input_workers --disable-historical=$input_disableHistorical $input_others --ipfs='https://unauthipfs.subquery.network/ipfs/api/v0' --db-schema=app > /app/output/benchmark/indexing.log 2>&1 &

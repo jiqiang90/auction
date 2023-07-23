@@ -86,13 +86,10 @@ jobs:
         env:
           PGPASSWORD: postgres
 
-      - name: Set up PostgreSQL
-        run: docker exec -it postgres psql -U postgres -d postgres -c "CREATE TABLE example_table (id SERIAL PRIMARY KEY, name VARCHAR(255));"
-
       - name: Build and run Docker container
         run: |
           docker build -t my_indexer .github/workflows/scripts/benchmark/
-          docker run --name my_container -e DB_USER=postgres -e DB_PASS=postgres -e DB_DATABASE=postgres -e DB_HOST=postgres -e DB_PORT=5432 my_indexer
+          docker run --name my_container -e DB_USER=postgres -e DB_PASS=postgres -e DB_DATABASE=postgres -e DB_HOST=localhost -e DB_PORT=5432 my_indexer
 
 #      - name: Ensure clean reports directory
 #        run: |

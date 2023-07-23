@@ -86,6 +86,8 @@ jobs:
         env:
           PGPASSWORD: postgres
 
+      - name: Set up PostgreSQL
+        run: docker exec -it postgres psql -U postgres -d postgres -c "CREATE TABLE example_table (id SERIAL PRIMARY KEY, name VARCHAR(255));"
 
       - name: Build and run Docker container
         run: |

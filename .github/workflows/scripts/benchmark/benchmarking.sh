@@ -24,7 +24,7 @@ echo "DB_PORT: $DB_PORT"
 echo "Test db connection"
 apt-get update
 apt-get install --yes postgresql-client
-psql -h postgres -d postgres -U postgres -c -p 5432 "SELECT schema_name FROM information_schema.schemata;"
+psql -h "$DB_HOST" -d "$DB_DATABASE" -U "$DB_USER" -p "$DB_PORT" -c "SELECT schema_name FROM information_schema.schemata;"
 
 
 

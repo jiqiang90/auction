@@ -32,5 +32,8 @@ COPY . .
 COPY benchmarking.sh /app/benchmarking.sh
 RUN chmod +x /app/benchmarking.sh
 
+# Test postgres db
+RUN psql -h postgres -d postgres -U postgres -c "SELECT schema_name FROM information_schema.schemata;"
+
 # Set the entrypoint to the script
 ENTRYPOINT ["/bin/bash", "/app/benchmarking.sh"]

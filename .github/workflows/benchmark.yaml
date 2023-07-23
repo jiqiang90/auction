@@ -63,7 +63,6 @@ jobs:
           - 5432:5432
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
-
     steps:
       #Check out
       - uses: actions/checkout@v2
@@ -89,7 +88,7 @@ jobs:
       - name: Build and run Docker container
         run: |
           docker build -t my_indexer .github/workflows/scripts/benchmark/
-          docker run --name my_container -e DB_USER=postgres -e DB_PASS=postgres -e DB_DATABASE=postgres -e DB_HOST=localhost -e DB_PORT=5432 my_indexer
+          docker run --network ${{ job.container.network }} --name my_container -e DB_USER=postgres -e DB_PASS=postgres -e DB_DATABASE=postgres -e DB_HOST=postgres -e DB_PORT=5432 my_indexer
 
 #      - name: Ensure clean reports directory
 #        run: |

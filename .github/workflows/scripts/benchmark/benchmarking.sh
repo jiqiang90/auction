@@ -6,7 +6,7 @@ echo "DB_DATABASE: $DB_DATABASE"
 echo "DB_HOST: $DB_HOST"
 echo "DB_PORT: $DB_PORT"
 
-echo "Test db connection"
+echo "Test db connection in benchmarking.sh"
 apt-get update
 apt-get install --yes postgresql-client
 psql -h "$DB_HOST" -d "$DB_DATABASE" -U "$DB_USER" -p "$DB_PORT" -c "SELECT schema_name FROM information_schema.schemata;"

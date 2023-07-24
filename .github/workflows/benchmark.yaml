@@ -132,13 +132,10 @@ jobs:
           echo "Last Processed Height: ${{steps.query_meta.outputs.last_processed_height}}" >> output/benchmark/benchmark.log
           echo "------------------------------------" >> output/benchmark/benchmark.log
 
-      - name: Stop and remove the benchmark container
-        run: docker stop my_container && docker rm my_container
-
       - name: Prepare benchmark log
         run: |
-          if grep -qi "benchmark" output/benchmark/indexing.log; then
-            grep -i "benchmark" output/benchmark/indexing.log >> output/benchmark/benchmark.log
+          if grep -qi "benchmark" ${{ github.workspace }}/output/benchmark/indexing.log; then
+            grep -i "benchmark" ${{ github.workspace }}/output/benchmark/indexing.log >> output/benchmark/benchmark.log
             cat output/benchmark/benchmark.log
           else
             echo "No lines containing 'benchmark' found in output/benchmark/indexing.log" >> output/benchmark/benchmark.log
@@ -150,6 +147,9 @@ jobs:
         with:
           format: YYYYMMDD-HHmm
           utcOffset: "+12:00"
+
+      - name: Stop and remove the benchmark container
+        run: docker stop my_container && docker rm my_container
 
       - name: Upload reports
         uses: actions/upload-artifact@v3

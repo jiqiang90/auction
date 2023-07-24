@@ -28,5 +28,3 @@ sleep $input_duration
 
 # Terminate the Node.js app
 pkill -P $APP_PID || true
-
-cat /app/output/benchmark/indexing.log

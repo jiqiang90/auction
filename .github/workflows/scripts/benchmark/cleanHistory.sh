@@ -7,5 +7,5 @@ if [ -d "$output_dir" ]; then
   rm -rf "$output_dir"
 fi
 # Create the new directory
-echo "Creating new directory: $output_dir"
+echo "Creating new directory: ${PWD}/$output_dir"
 mkdir -p "$output_dir"

@@ -1,4 +1,4 @@
-name: BENCHMARK-DOCKER
+name: BENCHMARK
 on:
   workflow_dispatch:
     inputs:
@@ -99,12 +99,12 @@ jobs:
           docker rm -f $CONTAINER_NAME || true
           VOLUME_NAME="${CONTAINER_NAME}_data"
           docker volume rm $VOLUME_NAME || true
-          docker build -t my_indexer --build-arg input_indexer_version=${{github.event.inputs.indexerVersion}} --build-arg input_cpus=${{github.event.inputs.cpus}} --build-arg input_memory=${{github.event.inputs.memory}} .github/workflows/scripts/benchmark/
+          docker build -t my_indexer --build-arg input_indexer_version=${{github.event.inputs.indexerVersion}} .github/workflows/scripts/benchmark/
 
       - name: Benchmarking
         id: app
         run: |
-          docker run --network ${{ job.container.network }} --name my_container -v "${PWD}/output/benchmark:/app/output/benchmark" my_indexer ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ github.event.inputs.network-endpoint }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}
+          docker run --cpus=${{github.event.inputs.cpus}} --memory=${{github.event.inputs.memory}} --network ${{ job.container.network }} --name my_container -v "${PWD}/output/benchmark:/app/output/benchmark" my_indexer ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ github.event.inputs.network-endpoint }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}
           docker cp my_container:/app/output/benchmark/indexing.log output/benchmark/
 
       - name: Stop and remove the benchmark container

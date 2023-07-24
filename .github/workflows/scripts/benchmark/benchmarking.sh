@@ -10,20 +10,19 @@ input_workers=$5
 input_disableHistorical=$6
 input_others=$7
 
-# Clean docker container history
+# Clean docker container
 output_dir="output/benchmark/"
 . cleanHistory.sh $output_dir
 
 # Start the Node.js app in the background and save its PID
 subql-node -f ipfs://$input_deployment --network-endpoint=$input_endpoint --batch-size=$input_batch_size --workers=$input_workers --disable-historical=$input_disableHistorical $input_others --ipfs='https://unauthipfs.subquery.network/ipfs/api/v0' --db-schema=app > output/benchmark/indexing.log 2>&1 &
-#subql-node -f ipfs://$input_deployment --network-endpoint=$input_endpoint --debug --ipfs='https://unauthipfs.subquery.network/ipfs/api/v0' --db-schema=app > output/benchmark/indexing.log 2>&1 &
 
 APP_PID=$!
 
 #echo "Path from Benchmarking"
 #ls "${PWD}/${output_dir}"
 
-echo "Benchmarking timeout: $input_duration"
+echo "Benchmarking timeout: $input_duration, please wait"
 # Wait for timeout
 sleep $input_duration
 

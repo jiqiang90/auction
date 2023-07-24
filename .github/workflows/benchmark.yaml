@@ -90,6 +90,7 @@ jobs:
           output_dir="output/benchmark/"
           chmod +x .github/workflows/scripts/benchmark/cleanHistory.sh
           .github/workflows/scripts/benchmark/cleanHistory.sh $output_dir
+          ls "${{ github.workspace }}/$output_dir"
 
       - name: Clean last container && re-build latest indexer docker file
         run: |
@@ -104,8 +105,9 @@ jobs:
       - name: Benchmarking
         id: app
         run: |
-          echo "${PWD}/output"
-          docker run --network ${{ job.container.network }} --name my_container -v "${PWD}/output:/app/output" my_indexer ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ github.event.inputs.network-endpoint }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}
+          docker run --network ${{ job.container.network }} --name my_container -v "${{ github.workspace }}/output:/app/output" my_indexer ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ github.event.inputs.network-endpoint }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}
+          echo "after benchmark:  ${PWD}/output"
+          find "${PWD}/output" -type f -exec ls -l {} \;
 
       - name: Query metadata get processed height
         id: query_meta

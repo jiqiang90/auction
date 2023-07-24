@@ -106,8 +106,8 @@ jobs:
         id: app
         run: |
           docker run --network ${{ job.container.network }} --name my_container -v "${PWD}/output:/app/output" my_indexer ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ github.event.inputs.network-endpoint }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}
-          echo "after benchmark:  ${PWD}/output"
-          ls "${PWD}/output"
+          echo "after benchmark:  ${PWD}/output/benchmark"
+          ls "${PWD}/output/benchmark"
 
       - name: Query metadata get processed height
         id: query_meta

@@ -90,7 +90,6 @@ jobs:
           output_dir="output/benchmark/"
           chmod +x .github/workflows/scripts/benchmark/cleanHistory.sh
           .github/workflows/scripts/benchmark/cleanHistory.sh $output_dir
-          ls "${PWD}/$output_dir"
 
       - name: Clean last container && re-build latest indexer docker file
         run: |
@@ -105,10 +104,8 @@ jobs:
       - name: Benchmarking
         id: app
         run: |
-          docker run --network ${{ job.container.network }} --name my_container -v "${PWD}/output/benchmark:/app/output/benchmark" my_indexer ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ github.event.inputs.network-endpoint }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}
+          docker run --network ${{ job.container.network }} --name my_container -v "output/benchmark:/app/output/benchmark" my_indexer ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ github.event.inputs.network-endpoint }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}
           docker cp my_container:/app/output/benchmark/indexing.log output/benchmark/
-          echo "after benchmark:  ${PWD}/output/benchmark"
-          ls "${PWD}/output/benchmark"
 
       - name: Query metadata get processed height
         id: query_meta
@@ -137,8 +134,8 @@ jobs:
 
       - name: Prepare benchmark log
         run: |
-          if grep -qi "benchmark" ${PWD}/output/benchmark/indexing.log; then
-            grep -i "benchmark" ${PWD}/output/benchmark/indexing.log >> output/benchmark/benchmark.log
+          if grep -qi "benchmark" output/benchmark/indexing.log; then
+            grep -i "benchmark" output/benchmark/indexing.log >> output/benchmark/benchmark.log
             cat output/benchmark/benchmark.log
           else
             echo "No lines containing 'benchmark' found in output/benchmark/indexing.log" >> output/benchmark/benchmark.log

@@ -174,7 +174,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "Results: ${{ job.status }}\n Indexer:${{steps.query_meta.outputs.runner_node}}@${{steps.query_meta.outputs.indexer_version}}\n deployment:${{github.event.inputs.deployment}}\n workers:${{github.event.inputs.workers}}\n batch-size:${{github.event.inputs.batch-size}}\n block ${{steps.query_meta.outputs.start_height}} to ${{steps.query_meta.outputs.last_processed_height}}, total ${{steps.query_meta.outputs.total_height}} in ${{github.event.inputs.benchmark-time}}\n More details: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                    "text": "Results: ${{ job.status }}\n CPUs: ${{github.event.inputs.cpus}}\n Memory: ${{github.event.inputs.memory}}\n  Indexer: ${{steps.query_meta.outputs.runner_node}}@${{steps.query_meta.outputs.indexer_version}}\n Deployment: ${{github.event.inputs.deployment}}\n Workers: ${{github.event.inputs.workers}}\n Batch-size: ${{github.event.inputs.batch-size}}\n Performance: block ${{steps.query_meta.outputs.start_height}} to ${{steps.query_meta.outputs.last_processed_height}}, total ${{steps.query_meta.outputs.total_height}} in ${{github.event.inputs.benchmark-time}}\n More details: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
                   }
                 }
               ]

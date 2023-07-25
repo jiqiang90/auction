@@ -81,7 +81,7 @@ jobs:
 
       # Install bc for convert time in seconds
       - name: Install bc
-        run: sudo apt-get install -y bc
+        run: apt-get install -y bc
 
       # queries database with postgres client
       - name: Setup historical database

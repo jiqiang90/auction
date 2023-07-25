@@ -15,7 +15,9 @@ start_height=$(psql -h postgres -d postgres -U postgres -c "SELECT value::intege
 last_processed_height=$(psql -h postgres -d postgres -U postgres -c "SELECT value::integer FROM app._metadata WHERE key = 'lastProcessedHeight';" | awk 'NR == 3 {print $1}')
 total_height=$((last_processed_height-start_height+1))
 time_in_seconds=$(t2s "$input_duration")
+echo  "Time in seconds ${time_in_seconds}..."
 bps=$(awk "BEGIN {printf \"%.2f\", $total_height / $time_in_seconds}")
+echo "Bytes per Second (bps): $bps"
 # Set outputs for subsequent steps
 echo "::set-output name=runner_node::$runner_node"
 echo "::set-output name=indexer_version::$indexer_version"

@@ -26,6 +26,10 @@ on:
         description: 'Network endpoint'
         default: 'wss://rpc-polkadot.luckyfriday.io'
         require: true
+      use-network-api-key:
+        description: 'Use api endpoint key'
+        default: false
+        required: true
       disableHistorical:
         description: 'Disable historical'
         default: 'true'
@@ -43,20 +47,6 @@ on:
         require: false
 
 jobs:
-
-  register-for-beta:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Create secret environment variables from inputs
-        run: |
-          NETWORK_ENDPOINT=$(jq -r '.inputs.network-endpoint' $GITHUB_EVENT_PATH)
-          echo ::add-mask::$NETWORK_ENDPOINT
-          echo NETWORK_ENDPOINT="$NETWORK_ENDPOINT" >> $GITHUB_ENV
-      - name: Now, I can safely use input via environment variable
-        run: echo "$NETWORK_ENDPOINT" # the output from this command will be "echo ***"
-
-
-
   # Label of the container job
   container-job:
     # Containers must run in Linux based operating systems
@@ -83,6 +73,26 @@ jobs:
         with:
           fetch-depth: 100
           token: ${{ secrets.GITHUB_TOKEN }}
+
+
+      - name: Prepare Network Endpoint
+        id: prepare-network-endpoint
+        run: |
+          if [ "${{ github.event.inputs.use-network-api-key }}" = "true" ]; then
+            NETWORK_ENDPOINT="${{ github.event.inputs.network-endpoint }}${{ secrets.NETWORK_API_KEY }}"
+          else
+            NETWORK_ENDPOINT="${{ github.event.inputs.network-endpoint }}"
+          fi
+          echo "::set-output name=network-endpoint::${NETWORK_ENDPOINT}"
+          echo "::add-mask::${NETWORK_ENDPOINT}"
+          # Store the prepared NETWORK_ENDPOINT in an environment variable
+          echo "NETWORK_ENDPOINT=${NETWORK_ENDPOINT}" >> $GITHUB_ENV 
+          
+
+      - name: Test endpoint expose
+        run: |
+          # Use the prepared network-endpoint
+          echo "Using the network-endpoint: ${{ steps.prepare-network-endpoint.outputs.network-endpoint }}"    
 
       - name: Install Docker inside the container
         run: |
@@ -122,7 +132,7 @@ jobs:
       - name: Benchmarking
         id: app
         run: |
-          docker run --cpus=${{github.event.inputs.cpus}} --memory=${{github.event.inputs.memory}} --network ${{ job.container.network }} --name my_container -v "${PWD}/output/benchmark:/app/output/benchmark" my_indexer ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} $NETWORK_ENDPOINT ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}
+          docker run --cpus=${{github.event.inputs.cpus}} --memory=${{github.event.inputs.memory}} --network ${{ job.container.network }} --name my_container -v "${PWD}/output/benchmark:/app/output/benchmark" my_indexer ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ env.NETWORK_ENDPOINT }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}
           docker cp my_container:/app/output/benchmark/indexing.log output/benchmark/
 
       - name: Stop and remove the benchmark container
@@ -142,7 +152,9 @@ jobs:
           echo "indexer=${{steps.query_meta.outputs.runner_node}}" >> output/benchmark/benchmark.log
           echo "indexerVersion=${{steps.query_meta.outputs.indexer_version}}" >> output/benchmark/benchmark.log
           echo "deployment=${{github.event.inputs.deployment}}" >> output/benchmark/benchmark.log
-          echo "network-endpoint=${{github.event.inputs.network-endpoint}}" >> output/benchmark/benchmark.log
+          if [ "${{ github.event.inputs.use-network-api-key }}" = "false" ]; then
+            echo "network-endpoint=${{github.event.inputs.network-endpoint}}" >> output/benchmark/benchmark.log
+          fi
           echo "disableHistorical=${{github.event.inputs.disableHistorical}}" >> output/benchmark/benchmark.log
           echo "batch-size=${{github.event.inputs.batch-size}}" >> output/benchmark/benchmark.log
           echo "workers=${{github.event.inputs.workers}}" >> output/benchmark/benchmark.log
@@ -174,29 +186,29 @@ jobs:
         with:
           name: benchmark-${{steps.current-time.outputs.formattedTime}}-${{steps.query_meta.outputs.indexer_version}}
           path: output/benchmark/
-
-
-      - name: Post to a Slack channel
-        id: slack
-        uses: slackapi/slack-github-action@v1.24.0
-        with:
-          # Slack channel id, channel name, or user id to post message.
-          # See also: https://api.slack.com/methods/chat.postMessage#channels
-          channel-id: 'C02156BV42V'
-          # For posting a rich message using Block Kit
-          payload: |
-            {
-              "text": "Benchmark result ${{steps.current-time.outputs.formattedTime}}",
-              "blocks": [
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "Results: ${{ job.status }} with ${{steps.query_meta.outputs.bps}} bps\n Performance: Block [${{steps.query_meta.outputs.start_height}}-${{steps.query_meta.outputs.last_processed_height}}], total ${{steps.query_meta.outputs.total_height}} blocks in ${{github.event.inputs.benchmark-time}}\n More details: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}\n Indexer: ${{steps.query_meta.outputs.runner_node}}@${{steps.query_meta.outputs.indexer_version}}\n Deployment: ${{github.event.inputs.deployment}}\n CPUs: ${{github.event.inputs.cpus}}\n Memory: ${{github.event.inputs.memory}}\n Workers: ${{github.event.inputs.workers}}\n Batch-size: ${{github.event.inputs.batch-size}}"
-                  }
-                }
-              ]
-            }
-        env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+#
+#
+#      - name: Post to a Slack channel
+#        id: slack
+#        uses: slackapi/slack-github-action@v1.24.0
+#        with:
+#          # Slack channel id, channel name, or user id to post message.
+#          # See also: https://api.slack.com/methods/chat.postMessage#channels
+#          channel-id: 'C02156BV42V'
+#          # For posting a rich message using Block Kit
+#          payload: |
+#            {
+#              "text": "Benchmark result ${{steps.current-time.outputs.formattedTime}}",
+#              "blocks": [
+#                {
+#                  "type": "section",
+#                  "text": {
+#                    "type": "mrkdwn",
+#                    "text": "Results: ${{ job.status }} with ${{steps.query_meta.outputs.bps}} bps\n Performance: Block [${{steps.query_meta.outputs.start_height}}-${{steps.query_meta.outputs.last_processed_height}}], total ${{steps.query_meta.outputs.total_height}} blocks in ${{github.event.inputs.benchmark-time}}\n More details: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}\n Indexer: ${{steps.query_meta.outputs.runner_node}}@${{steps.query_meta.outputs.indexer_version}}\n Deployment: ${{github.event.inputs.deployment}}\n CPUs: ${{github.event.inputs.cpus}}\n Memory: ${{github.event.inputs.memory}}\n Workers: ${{github.event.inputs.workers}}\n Batch-size: ${{github.event.inputs.batch-size}}"
+#                  }
+#                }
+#              ]
+#            }
+#        env:
+#          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
 

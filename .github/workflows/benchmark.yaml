@@ -30,10 +30,6 @@ on:
         description: 'Use api endpoint key'
         default: false
         required: true
-      disableHistorical:
-        description: 'Disable historical'
-        default: 'true'
-        require: false
       batch-size:
         description: 'batch-size'
         default: 30
@@ -132,7 +128,7 @@ jobs:
       - name: Benchmarking
         id: app
         run: |
-          docker run --cpus=${{github.event.inputs.cpus}} --memory=${{github.event.inputs.memory}} --network ${{ job.container.network }} --name my_container -v "${PWD}/output/benchmark:/app/output/benchmark" my_indexer ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ env.NETWORK_ENDPOINT }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}
+          docker run --cpus=${{github.event.inputs.cpus}} --memory=${{github.event.inputs.memory}} --network ${{ job.container.network }} --name my_container -v "${PWD}/output/benchmark:/app/output/benchmark" my_indexer ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ env.NETWORK_ENDPOINT }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.others }}
           docker cp my_container:/app/output/benchmark/indexing.log output/benchmark/
 
       - name: Stop and remove the benchmark container
@@ -155,7 +151,6 @@ jobs:
           if [ "${{ github.event.inputs.use-network-api-key }}" = "false" ]; then
             echo "network-endpoint=${{github.event.inputs.network-endpoint}}" >> output/benchmark/benchmark.log
           fi
-          echo "disableHistorical=${{github.event.inputs.disableHistorical}}" >> output/benchmark/benchmark.log
           echo "batch-size=${{github.event.inputs.batch-size}}" >> output/benchmark/benchmark.log
           echo "workers=${{github.event.inputs.workers}}" >> output/benchmark/benchmark.log
           if [ -n "${{github.event.inputs.others}}" ]; then

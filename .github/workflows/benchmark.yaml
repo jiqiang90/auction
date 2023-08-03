@@ -43,6 +43,20 @@ on:
         require: false
 
 jobs:
+
+  register-for-beta:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create secret environment variables from inputs
+        run: |
+          NETWORK_ENDPOINT=$(jq -r '.inputs.network-endpoint' $GITHUB_EVENT_PATH)
+          echo ::add-mask::$NETWORK_ENDPOINT
+          echo NETWORK_ENDPOINT="$NETWORK_ENDPOINT" >> $GITHUB_ENV
+      - name: Now, I can safely use input via environment variable
+        run: echo "$NETWORK_ENDPOINT" # the output from this command will be "echo ***"
+
+
+
   # Label of the container job
   container-job:
     # Containers must run in Linux based operating systems
@@ -108,7 +122,7 @@ jobs:
       - name: Benchmarking
         id: app
         run: |
-          docker run --cpus=${{github.event.inputs.cpus}} --memory=${{github.event.inputs.memory}} --network ${{ job.container.network }} --name my_container -v "${PWD}/output/benchmark:/app/output/benchmark" my_indexer ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} ${{ github.event.inputs.network-endpoint }} ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}
+          docker run --cpus=${{github.event.inputs.cpus}} --memory=${{github.event.inputs.memory}} --network ${{ job.container.network }} --name my_container -v "${PWD}/output/benchmark:/app/output/benchmark" my_indexer ${{github.event.inputs.benchmark-time}} ${{ github.event.inputs.deployment }} $NETWORK_ENDPOINT ${{ github.event.inputs.batch-size }} ${{ github.event.inputs.workers }} ${{ github.event.inputs.disableHistorical }} ${{ github.event.inputs.others }}
           docker cp my_container:/app/output/benchmark/indexing.log output/benchmark/
 
       - name: Stop and remove the benchmark container
